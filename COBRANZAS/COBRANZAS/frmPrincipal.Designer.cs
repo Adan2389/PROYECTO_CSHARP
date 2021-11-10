@@ -33,76 +33,78 @@ namespace COBRANZAS
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.tabMenuPrincipal = new MaterialSkin.Controls.MaterialTabControl();
             this.tabClientes = new System.Windows.Forms.TabPage();
-            this.tabServicios = new System.Windows.Forms.TabPage();
-            this.listaImagenes = new System.Windows.Forms.ImageList(this.components);
-            this.tabMorisidad = new System.Windows.Forms.TabPage();
-            this.tabConfiguraciones = new System.Windows.Forms.TabPage();
+            this.tabSelectorClientes = new MaterialSkin.Controls.MaterialTabSelector();
             this.tabOpcionClientes = new MaterialSkin.Controls.MaterialTabControl();
             this.tabClientesRegistro = new System.Windows.Forms.TabPage();
+            this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.materialCheckbox3 = new MaterialSkin.Controls.MaterialCheckbox();
+            this.materialCheckbox2 = new MaterialSkin.Controls.MaterialCheckbox();
+            this.materialCheckbox1 = new MaterialSkin.Controls.MaterialCheckbox();
+            this.materialComboBox1 = new MaterialSkin.Controls.MaterialComboBox();
+            this.materialRadioButton2 = new MaterialSkin.Controls.MaterialRadioButton();
+            this.materialRadioButton1 = new MaterialSkin.Controls.MaterialRadioButton();
+            this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialTextBox4 = new MaterialSkin.Controls.MaterialTextBox();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialTextBox3 = new MaterialSkin.Controls.MaterialTextBox();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialTextBox2 = new MaterialSkin.Controls.MaterialTextBox();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
             this.tabClientesConsulta = new System.Windows.Forms.TabPage();
-            this.tabSelectorClientes = new MaterialSkin.Controls.MaterialTabSelector();
+            this.tabServicios = new System.Windows.Forms.TabPage();
             this.tabSelectorServicios = new MaterialSkin.Controls.MaterialTabSelector();
             this.tabOpcionServicios = new MaterialSkin.Controls.MaterialTabControl();
             this.tabServicioRegistro = new System.Windows.Forms.TabPage();
             this.tabServiciosConsulta = new System.Windows.Forms.TabPage();
             this.tabServiciosPrecios = new System.Windows.Forms.TabPage();
+            this.tabMorisidad = new System.Windows.Forms.TabPage();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.tabOpcionMorosidad = new MaterialSkin.Controls.MaterialTabControl();
             this.tabMorosidadLista = new System.Windows.Forms.TabPage();
             this.tabMorosidadPlanesPago = new System.Windows.Forms.TabPage();
             this.tabMorosidadNotificaciones = new System.Windows.Forms.TabPage();
+            this.tabConfiguraciones = new System.Windows.Forms.TabPage();
             this.materialTabSelector2 = new MaterialSkin.Controls.MaterialTabSelector();
             this.tabOpcionConfiguraciones = new MaterialSkin.Controls.MaterialTabControl();
             this.tabConfigUsuarios = new System.Windows.Forms.TabPage();
             this.tabConfigAccesos = new System.Windows.Forms.TabPage();
             this.tabConfigModulos = new System.Windows.Forms.TabPage();
             this.tabConfigParametros = new System.Windows.Forms.TabPage();
+            this.listaImagenes = new System.Windows.Forms.ImageList(this.components);
             this.menuPrincipal = new System.Windows.Forms.MenuStrip();
             this.menuClientes = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuServicios = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuMorosidad = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuConfiguracion = new System.Windows.Forms.ToolStripMenuItem();
             this.registroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuServicios = new System.Windows.Forms.ToolStripMenuItem();
             this.registroToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.preciosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuMorosidad = new System.Windows.Forms.ToolStripMenuItem();
             this.listasDeMoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.planesDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notificacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuConfiguracion = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moduloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.parametrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
-            this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox2 = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox3 = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox4 = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
-            this.materialRadioButton1 = new MaterialSkin.Controls.MaterialRadioButton();
-            this.materialRadioButton2 = new MaterialSkin.Controls.MaterialRadioButton();
-            this.materialComboBox1 = new MaterialSkin.Controls.MaterialComboBox();
-            this.materialCheckbox1 = new MaterialSkin.Controls.MaterialCheckbox();
-            this.materialCheckbox2 = new MaterialSkin.Controls.MaterialCheckbox();
-            this.materialCheckbox3 = new MaterialSkin.Controls.MaterialCheckbox();
+            this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
             this.tabMenuPrincipal.SuspendLayout();
             this.tabClientes.SuspendLayout();
-            this.tabServicios.SuspendLayout();
-            this.tabMorisidad.SuspendLayout();
-            this.tabConfiguraciones.SuspendLayout();
             this.tabOpcionClientes.SuspendLayout();
             this.tabClientesRegistro.SuspendLayout();
+            this.materialCard1.SuspendLayout();
+            this.tabServicios.SuspendLayout();
             this.tabOpcionServicios.SuspendLayout();
+            this.tabMorisidad.SuspendLayout();
             this.tabOpcionMorosidad.SuspendLayout();
+            this.tabConfiguraciones.SuspendLayout();
             this.tabOpcionConfiguraciones.SuspendLayout();
             this.menuPrincipal.SuspendLayout();
-            this.materialCard1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabMenuPrincipal
@@ -135,51 +137,19 @@ namespace COBRANZAS
             this.tabClientes.Text = "Clientes";
             this.tabClientes.UseVisualStyleBackColor = true;
             // 
-            // tabServicios
+            // tabSelectorClientes
             // 
-            this.tabServicios.Controls.Add(this.tabSelectorServicios);
-            this.tabServicios.Controls.Add(this.tabOpcionServicios);
-            this.tabServicios.ImageKey = "services.png";
-            this.tabServicios.Location = new System.Drawing.Point(4, 23);
-            this.tabServicios.Name = "tabServicios";
-            this.tabServicios.Padding = new System.Windows.Forms.Padding(3);
-            this.tabServicios.Size = new System.Drawing.Size(1182, 576);
-            this.tabServicios.TabIndex = 1;
-            this.tabServicios.Text = "Servicios";
-            this.tabServicios.UseVisualStyleBackColor = true;
-            // 
-            // listaImagenes
-            // 
-            this.listaImagenes.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("listaImagenes.ImageStream")));
-            this.listaImagenes.TransparentColor = System.Drawing.Color.Transparent;
-            this.listaImagenes.Images.SetKeyName(0, "config.png");
-            this.listaImagenes.Images.SetKeyName(1, "mora.png");
-            this.listaImagenes.Images.SetKeyName(2, "services.png");
-            this.listaImagenes.Images.SetKeyName(3, "User.png");
-            // 
-            // tabMorisidad
-            // 
-            this.tabMorisidad.Controls.Add(this.materialTabSelector1);
-            this.tabMorisidad.Controls.Add(this.tabOpcionMorosidad);
-            this.tabMorisidad.ImageKey = "mora.png";
-            this.tabMorisidad.Location = new System.Drawing.Point(4, 23);
-            this.tabMorisidad.Name = "tabMorisidad";
-            this.tabMorisidad.Size = new System.Drawing.Size(1182, 576);
-            this.tabMorisidad.TabIndex = 2;
-            this.tabMorisidad.Text = "Morosidad";
-            this.tabMorisidad.UseVisualStyleBackColor = true;
-            // 
-            // tabConfiguraciones
-            // 
-            this.tabConfiguraciones.Controls.Add(this.materialTabSelector2);
-            this.tabConfiguraciones.Controls.Add(this.tabOpcionConfiguraciones);
-            this.tabConfiguraciones.ImageKey = "config.png";
-            this.tabConfiguraciones.Location = new System.Drawing.Point(4, 23);
-            this.tabConfiguraciones.Name = "tabConfiguraciones";
-            this.tabConfiguraciones.Size = new System.Drawing.Size(1182, 552);
-            this.tabConfiguraciones.TabIndex = 3;
-            this.tabConfiguraciones.Text = "Configuraciones";
-            this.tabConfiguraciones.UseVisualStyleBackColor = true;
+            this.tabSelectorClientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabSelectorClientes.BaseTabControl = this.tabOpcionClientes;
+            this.tabSelectorClientes.Depth = 0;
+            this.tabSelectorClientes.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tabSelectorClientes.Location = new System.Drawing.Point(1, 1);
+            this.tabSelectorClientes.MouseState = MaterialSkin.MouseState.HOVER;
+            this.tabSelectorClientes.Name = "tabSelectorClientes";
+            this.tabSelectorClientes.Size = new System.Drawing.Size(1181, 48);
+            this.tabSelectorClientes.TabIndex = 1;
+            this.tabSelectorClientes.Text = "materialTabSelector1";
             // 
             // tabOpcionClientes
             // 
@@ -208,6 +178,301 @@ namespace COBRANZAS
             this.tabClientesRegistro.Text = "Registro";
             this.tabClientesRegistro.UseVisualStyleBackColor = true;
             // 
+            // materialCard1
+            // 
+            this.materialCard1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.materialButton3);
+            this.materialCard1.Controls.Add(this.checkBox1);
+            this.materialCard1.Controls.Add(this.materialCheckbox3);
+            this.materialCard1.Controls.Add(this.materialCheckbox2);
+            this.materialCard1.Controls.Add(this.materialCheckbox1);
+            this.materialCard1.Controls.Add(this.materialComboBox1);
+            this.materialCard1.Controls.Add(this.materialRadioButton2);
+            this.materialCard1.Controls.Add(this.materialRadioButton1);
+            this.materialCard1.Controls.Add(this.materialButton2);
+            this.materialCard1.Controls.Add(this.materialButton1);
+            this.materialCard1.Controls.Add(this.materialLabel4);
+            this.materialCard1.Controls.Add(this.materialTextBox4);
+            this.materialCard1.Controls.Add(this.materialLabel3);
+            this.materialCard1.Controls.Add(this.materialTextBox3);
+            this.materialCard1.Controls.Add(this.materialLabel2);
+            this.materialCard1.Controls.Add(this.materialTextBox2);
+            this.materialCard1.Controls.Add(this.materialLabel1);
+            this.materialCard1.Controls.Add(this.materialTextBox1);
+            this.materialCard1.Depth = 0;
+            this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard1.Location = new System.Drawing.Point(43, 17);
+            this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard1.Name = "materialCard1";
+            this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard1.Size = new System.Drawing.Size(1109, 434);
+            this.materialCard1.TabIndex = 0;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(807, 378);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(80, 17);
+            this.checkBox1.TabIndex = 16;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // materialCheckbox3
+            // 
+            this.materialCheckbox3.AutoSize = true;
+            this.materialCheckbox3.Depth = 0;
+            this.materialCheckbox3.Location = new System.Drawing.Point(863, 244);
+            this.materialCheckbox3.Margin = new System.Windows.Forms.Padding(0);
+            this.materialCheckbox3.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialCheckbox3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCheckbox3.Name = "materialCheckbox3";
+            this.materialCheckbox3.Ripple = true;
+            this.materialCheckbox3.Size = new System.Drawing.Size(98, 37);
+            this.materialCheckbox3.TabIndex = 15;
+            this.materialCheckbox3.Text = "Opcion 3";
+            this.materialCheckbox3.UseVisualStyleBackColor = true;
+            // 
+            // materialCheckbox2
+            // 
+            this.materialCheckbox2.AutoSize = true;
+            this.materialCheckbox2.Depth = 0;
+            this.materialCheckbox2.Location = new System.Drawing.Point(858, 201);
+            this.materialCheckbox2.Margin = new System.Windows.Forms.Padding(0);
+            this.materialCheckbox2.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialCheckbox2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCheckbox2.Name = "materialCheckbox2";
+            this.materialCheckbox2.Ripple = true;
+            this.materialCheckbox2.Size = new System.Drawing.Size(98, 37);
+            this.materialCheckbox2.TabIndex = 14;
+            this.materialCheckbox2.Text = "Opcion 2";
+            this.materialCheckbox2.UseVisualStyleBackColor = true;
+            // 
+            // materialCheckbox1
+            // 
+            this.materialCheckbox1.AutoSize = true;
+            this.materialCheckbox1.Depth = 0;
+            this.materialCheckbox1.Location = new System.Drawing.Point(798, 320);
+            this.materialCheckbox1.Margin = new System.Windows.Forms.Padding(0);
+            this.materialCheckbox1.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialCheckbox1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCheckbox1.Name = "materialCheckbox1";
+            this.materialCheckbox1.Ripple = true;
+            this.materialCheckbox1.Size = new System.Drawing.Size(89, 37);
+            this.materialCheckbox1.TabIndex = 13;
+            this.materialCheckbox1.Text = "Opcion ";
+            this.materialCheckbox1.UseVisualStyleBackColor = true;
+            // 
+            // materialComboBox1
+            // 
+            this.materialComboBox1.AutoResize = false;
+            this.materialComboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialComboBox1.Depth = 0;
+            this.materialComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.materialComboBox1.DropDownHeight = 174;
+            this.materialComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.materialComboBox1.DropDownWidth = 121;
+            this.materialComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.materialComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialComboBox1.FormattingEnabled = true;
+            this.materialComboBox1.IntegralHeight = false;
+            this.materialComboBox1.ItemHeight = 43;
+            this.materialComboBox1.Items.AddRange(new object[] {
+            "Uno",
+            "Dos",
+            "Tres"});
+            this.materialComboBox1.Location = new System.Drawing.Point(826, 104);
+            this.materialComboBox1.MaxDropDownItems = 4;
+            this.materialComboBox1.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialComboBox1.Name = "materialComboBox1";
+            this.materialComboBox1.Size = new System.Drawing.Size(223, 49);
+            this.materialComboBox1.StartIndex = 0;
+            this.materialComboBox1.TabIndex = 12;
+            // 
+            // materialRadioButton2
+            // 
+            this.materialRadioButton2.AutoSize = true;
+            this.materialRadioButton2.Depth = 0;
+            this.materialRadioButton2.Location = new System.Drawing.Point(872, 64);
+            this.materialRadioButton2.Margin = new System.Windows.Forms.Padding(0);
+            this.materialRadioButton2.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialRadioButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRadioButton2.Name = "materialRadioButton2";
+            this.materialRadioButton2.Ripple = true;
+            this.materialRadioButton2.Size = new System.Drawing.Size(89, 37);
+            this.materialRadioButton2.TabIndex = 11;
+            this.materialRadioButton2.TabStop = true;
+            this.materialRadioButton2.Text = "Casado";
+            this.materialRadioButton2.UseVisualStyleBackColor = true;
+            // 
+            // materialRadioButton1
+            // 
+            this.materialRadioButton1.AutoSize = true;
+            this.materialRadioButton1.Depth = 0;
+            this.materialRadioButton1.Location = new System.Drawing.Point(872, 21);
+            this.materialRadioButton1.Margin = new System.Windows.Forms.Padding(0);
+            this.materialRadioButton1.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialRadioButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRadioButton1.Name = "materialRadioButton1";
+            this.materialRadioButton1.Ripple = true;
+            this.materialRadioButton1.Size = new System.Drawing.Size(85, 37);
+            this.materialRadioButton1.TabIndex = 10;
+            this.materialRadioButton1.TabStop = true;
+            this.materialRadioButton1.Text = "Soltero";
+            this.materialRadioButton1.UseVisualStyleBackColor = true;
+            // 
+            // materialButton2
+            // 
+            this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton2.Depth = 0;
+            this.materialButton2.HighEmphasis = true;
+            this.materialButton2.Icon = null;
+            this.materialButton2.Location = new System.Drawing.Point(388, 336);
+            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton2.Name = "materialButton2";
+            this.materialButton2.Size = new System.Drawing.Size(96, 36);
+            this.materialButton2.TabIndex = 9;
+            this.materialButton2.Text = "Cancelar";
+            this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton2.UseAccentColor = false;
+            this.materialButton2.UseVisualStyleBackColor = true;
+            // 
+            // materialButton1
+            // 
+            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton1.Depth = 0;
+            this.materialButton1.HighEmphasis = true;
+            this.materialButton1.Icon = null;
+            this.materialButton1.Location = new System.Drawing.Point(264, 336);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton1.Name = "materialButton1";
+            this.materialButton1.Size = new System.Drawing.Size(88, 36);
+            this.materialButton1.TabIndex = 8;
+            this.materialButton1.Text = "Guardar";
+            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton1.UseAccentColor = false;
+            this.materialButton1.UseVisualStyleBackColor = true;
+            // 
+            // materialLabel4
+            // 
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel4.Location = new System.Drawing.Point(111, 275);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(67, 19);
+            this.materialLabel4.TabIndex = 7;
+            this.materialLabel4.Text = "Direccion";
+            // 
+            // materialTextBox4
+            // 
+            this.materialTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialTextBox4.Depth = 0;
+            this.materialTextBox4.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBox4.LeadingIcon = null;
+            this.materialTextBox4.Location = new System.Drawing.Point(193, 244);
+            this.materialTextBox4.MaxLength = 50;
+            this.materialTextBox4.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTextBox4.Multiline = false;
+            this.materialTextBox4.Name = "materialTextBox4";
+            this.materialTextBox4.Size = new System.Drawing.Size(578, 50);
+            this.materialTextBox4.TabIndex = 6;
+            this.materialTextBox4.Text = "";
+            this.materialTextBox4.TrailingIcon = null;
+            // 
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel3.Location = new System.Drawing.Point(111, 201);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(64, 19);
+            this.materialLabel3.TabIndex = 5;
+            this.materialLabel3.Text = "Telefono";
+            // 
+            // materialTextBox3
+            // 
+            this.materialTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialTextBox3.Depth = 0;
+            this.materialTextBox3.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBox3.LeadingIcon = null;
+            this.materialTextBox3.Location = new System.Drawing.Point(193, 170);
+            this.materialTextBox3.MaxLength = 50;
+            this.materialTextBox3.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTextBox3.Multiline = false;
+            this.materialTextBox3.Name = "materialTextBox3";
+            this.materialTextBox3.Size = new System.Drawing.Size(300, 50);
+            this.materialTextBox3.TabIndex = 4;
+            this.materialTextBox3.Text = "";
+            this.materialTextBox3.TrailingIcon = null;
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel2.Location = new System.Drawing.Point(103, 64);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(67, 19);
+            this.materialLabel2.TabIndex = 3;
+            this.materialLabel2.Text = "Identidad";
+            // 
+            // materialTextBox2
+            // 
+            this.materialTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialTextBox2.Depth = 0;
+            this.materialTextBox2.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBox2.LeadingIcon = null;
+            this.materialTextBox2.Location = new System.Drawing.Point(193, 33);
+            this.materialTextBox2.MaxLength = 50;
+            this.materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTextBox2.Multiline = false;
+            this.materialTextBox2.Name = "materialTextBox2";
+            this.materialTextBox2.Size = new System.Drawing.Size(300, 50);
+            this.materialTextBox2.TabIndex = 2;
+            this.materialTextBox2.Text = "";
+            this.materialTextBox2.TrailingIcon = null;
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.Location = new System.Drawing.Point(113, 130);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(57, 19);
+            this.materialLabel1.TabIndex = 1;
+            this.materialLabel1.Text = "Nombre";
+            // 
+            // materialTextBox1
+            // 
+            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialTextBox1.Depth = 0;
+            this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBox1.LeadingIcon = null;
+            this.materialTextBox1.Location = new System.Drawing.Point(193, 99);
+            this.materialTextBox1.MaxLength = 50;
+            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTextBox1.Multiline = false;
+            this.materialTextBox1.Name = "materialTextBox1";
+            this.materialTextBox1.Size = new System.Drawing.Size(578, 50);
+            this.materialTextBox1.TabIndex = 0;
+            this.materialTextBox1.Text = "";
+            this.materialTextBox1.TrailingIcon = null;
+            // 
             // tabClientesConsulta
             // 
             this.tabClientesConsulta.Location = new System.Drawing.Point(4, 22);
@@ -218,19 +483,18 @@ namespace COBRANZAS
             this.tabClientesConsulta.Text = "Consulta";
             this.tabClientesConsulta.UseVisualStyleBackColor = true;
             // 
-            // tabSelectorClientes
+            // tabServicios
             // 
-            this.tabSelectorClientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabSelectorClientes.BaseTabControl = this.tabOpcionClientes;
-            this.tabSelectorClientes.Depth = 0;
-            this.tabSelectorClientes.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.tabSelectorClientes.Location = new System.Drawing.Point(1, 1);
-            this.tabSelectorClientes.MouseState = MaterialSkin.MouseState.HOVER;
-            this.tabSelectorClientes.Name = "tabSelectorClientes";
-            this.tabSelectorClientes.Size = new System.Drawing.Size(1181, 48);
-            this.tabSelectorClientes.TabIndex = 1;
-            this.tabSelectorClientes.Text = "materialTabSelector1";
+            this.tabServicios.Controls.Add(this.tabSelectorServicios);
+            this.tabServicios.Controls.Add(this.tabOpcionServicios);
+            this.tabServicios.ImageKey = "services.png";
+            this.tabServicios.Location = new System.Drawing.Point(4, 23);
+            this.tabServicios.Name = "tabServicios";
+            this.tabServicios.Padding = new System.Windows.Forms.Padding(3);
+            this.tabServicios.Size = new System.Drawing.Size(1182, 552);
+            this.tabServicios.TabIndex = 1;
+            this.tabServicios.Text = "Servicios";
+            this.tabServicios.UseVisualStyleBackColor = true;
             // 
             // tabSelectorServicios
             // 
@@ -292,6 +556,18 @@ namespace COBRANZAS
             this.tabServiciosPrecios.Text = "Precios";
             this.tabServiciosPrecios.UseVisualStyleBackColor = true;
             // 
+            // tabMorisidad
+            // 
+            this.tabMorisidad.Controls.Add(this.materialTabSelector1);
+            this.tabMorisidad.Controls.Add(this.tabOpcionMorosidad);
+            this.tabMorisidad.ImageKey = "Monitor.png";
+            this.tabMorisidad.Location = new System.Drawing.Point(4, 23);
+            this.tabMorisidad.Name = "tabMorisidad";
+            this.tabMorisidad.Size = new System.Drawing.Size(1182, 552);
+            this.tabMorisidad.TabIndex = 2;
+            this.tabMorisidad.Text = "Morosidad";
+            this.tabMorisidad.UseVisualStyleBackColor = true;
+            // 
             // materialTabSelector1
             // 
             this.materialTabSelector1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -352,6 +628,18 @@ namespace COBRANZAS
             this.tabMorosidadNotificaciones.Text = "Notificaciones";
             this.tabMorosidadNotificaciones.UseVisualStyleBackColor = true;
             // 
+            // tabConfiguraciones
+            // 
+            this.tabConfiguraciones.Controls.Add(this.materialTabSelector2);
+            this.tabConfiguraciones.Controls.Add(this.tabOpcionConfiguraciones);
+            this.tabConfiguraciones.ImageKey = "config.png";
+            this.tabConfiguraciones.Location = new System.Drawing.Point(4, 23);
+            this.tabConfiguraciones.Name = "tabConfiguraciones";
+            this.tabConfiguraciones.Size = new System.Drawing.Size(1182, 552);
+            this.tabConfiguraciones.TabIndex = 3;
+            this.tabConfiguraciones.Text = "Configuraciones";
+            this.tabConfiguraciones.UseVisualStyleBackColor = true;
+            // 
             // materialTabSelector2
             // 
             this.materialTabSelector2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -401,7 +689,7 @@ namespace COBRANZAS
             this.tabConfigAccesos.Location = new System.Drawing.Point(4, 23);
             this.tabConfigAccesos.Name = "tabConfigAccesos";
             this.tabConfigAccesos.Padding = new System.Windows.Forms.Padding(3);
-            this.tabConfigAccesos.Size = new System.Drawing.Size(1169, 491);
+            this.tabConfigAccesos.Size = new System.Drawing.Size(1169, 467);
             this.tabConfigAccesos.TabIndex = 1;
             this.tabConfigAccesos.Text = "Accesos";
             this.tabConfigAccesos.UseVisualStyleBackColor = true;
@@ -410,7 +698,7 @@ namespace COBRANZAS
             // 
             this.tabConfigModulos.Location = new System.Drawing.Point(4, 23);
             this.tabConfigModulos.Name = "tabConfigModulos";
-            this.tabConfigModulos.Size = new System.Drawing.Size(1169, 491);
+            this.tabConfigModulos.Size = new System.Drawing.Size(1169, 467);
             this.tabConfigModulos.TabIndex = 2;
             this.tabConfigModulos.Text = "Modulos";
             this.tabConfigModulos.UseVisualStyleBackColor = true;
@@ -419,10 +707,20 @@ namespace COBRANZAS
             // 
             this.tabConfigParametros.Location = new System.Drawing.Point(4, 23);
             this.tabConfigParametros.Name = "tabConfigParametros";
-            this.tabConfigParametros.Size = new System.Drawing.Size(1169, 491);
+            this.tabConfigParametros.Size = new System.Drawing.Size(1169, 467);
             this.tabConfigParametros.TabIndex = 3;
             this.tabConfigParametros.Text = "Parametros";
             this.tabConfigParametros.UseVisualStyleBackColor = true;
+            // 
+            // listaImagenes
+            // 
+            this.listaImagenes.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("listaImagenes.ImageStream")));
+            this.listaImagenes.TransparentColor = System.Drawing.Color.Transparent;
+            this.listaImagenes.Images.SetKeyName(0, "config.png");
+            this.listaImagenes.Images.SetKeyName(1, "mora.png");
+            this.listaImagenes.Images.SetKeyName(2, "services.png");
+            this.listaImagenes.Images.SetKeyName(3, "User.png");
+            this.listaImagenes.Images.SetKeyName(4, "Monitor.png");
             // 
             // menuPrincipal
             // 
@@ -446,37 +744,6 @@ namespace COBRANZAS
             this.menuClientes.Size = new System.Drawing.Size(61, 20);
             this.menuClientes.Text = "Clientes";
             // 
-            // menuServicios
-            // 
-            this.menuServicios.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registroToolStripMenuItem1,
-            this.consultaToolStripMenuItem1,
-            this.preciosToolStripMenuItem});
-            this.menuServicios.Name = "menuServicios";
-            this.menuServicios.Size = new System.Drawing.Size(65, 20);
-            this.menuServicios.Text = "Servicios";
-            // 
-            // menuMorosidad
-            // 
-            this.menuMorosidad.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listasDeMoraToolStripMenuItem,
-            this.planesDePagoToolStripMenuItem,
-            this.notificacionesToolStripMenuItem});
-            this.menuMorosidad.Name = "menuMorosidad";
-            this.menuMorosidad.Size = new System.Drawing.Size(76, 20);
-            this.menuMorosidad.Text = "Morosidad";
-            // 
-            // menuConfiguracion
-            // 
-            this.menuConfiguracion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.usuariosToolStripMenuItem,
-            this.accesosToolStripMenuItem,
-            this.moduloToolStripMenuItem,
-            this.parametrosToolStripMenuItem});
-            this.menuConfiguracion.Name = "menuConfiguracion";
-            this.menuConfiguracion.Size = new System.Drawing.Size(106, 20);
-            this.menuConfiguracion.Text = "Configuraciones";
-            // 
             // registroToolStripMenuItem
             // 
             this.registroToolStripMenuItem.Name = "registroToolStripMenuItem";
@@ -489,348 +756,115 @@ namespace COBRANZAS
             this.consultaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.consultaToolStripMenuItem.Text = "Consulta";
             // 
+            // menuServicios
+            // 
+            this.menuServicios.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registroToolStripMenuItem1,
+            this.consultaToolStripMenuItem1,
+            this.preciosToolStripMenuItem});
+            this.menuServicios.Name = "menuServicios";
+            this.menuServicios.Size = new System.Drawing.Size(65, 20);
+            this.menuServicios.Text = "Servicios";
+            // 
             // registroToolStripMenuItem1
             // 
             this.registroToolStripMenuItem1.Name = "registroToolStripMenuItem1";
-            this.registroToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.registroToolStripMenuItem1.Size = new System.Drawing.Size(121, 22);
             this.registroToolStripMenuItem1.Text = "Registro";
             // 
             // consultaToolStripMenuItem1
             // 
             this.consultaToolStripMenuItem1.Name = "consultaToolStripMenuItem1";
-            this.consultaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.consultaToolStripMenuItem1.Size = new System.Drawing.Size(121, 22);
             this.consultaToolStripMenuItem1.Text = "Consulta";
             // 
             // preciosToolStripMenuItem
             // 
             this.preciosToolStripMenuItem.Name = "preciosToolStripMenuItem";
-            this.preciosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.preciosToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.preciosToolStripMenuItem.Text = "Precios";
+            // 
+            // menuMorosidad
+            // 
+            this.menuMorosidad.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listasDeMoraToolStripMenuItem,
+            this.planesDePagoToolStripMenuItem,
+            this.notificacionesToolStripMenuItem});
+            this.menuMorosidad.Name = "menuMorosidad";
+            this.menuMorosidad.Size = new System.Drawing.Size(76, 20);
+            this.menuMorosidad.Text = "Morosidad";
             // 
             // listasDeMoraToolStripMenuItem
             // 
             this.listasDeMoraToolStripMenuItem.Name = "listasDeMoraToolStripMenuItem";
-            this.listasDeMoraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listasDeMoraToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.listasDeMoraToolStripMenuItem.Text = "Listas de Mora";
             // 
             // planesDePagoToolStripMenuItem
             // 
             this.planesDePagoToolStripMenuItem.Name = "planesDePagoToolStripMenuItem";
-            this.planesDePagoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.planesDePagoToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.planesDePagoToolStripMenuItem.Text = "Planes de Pago";
             // 
             // notificacionesToolStripMenuItem
             // 
             this.notificacionesToolStripMenuItem.Name = "notificacionesToolStripMenuItem";
-            this.notificacionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.notificacionesToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.notificacionesToolStripMenuItem.Text = "Notificaciones";
+            // 
+            // menuConfiguracion
+            // 
+            this.menuConfiguracion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.usuariosToolStripMenuItem,
+            this.accesosToolStripMenuItem,
+            this.moduloToolStripMenuItem,
+            this.parametrosToolStripMenuItem});
+            this.menuConfiguracion.Name = "menuConfiguracion";
+            this.menuConfiguracion.Size = new System.Drawing.Size(106, 20);
+            this.menuConfiguracion.Text = "Configuraciones";
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             // 
             // accesosToolStripMenuItem
             // 
             this.accesosToolStripMenuItem.Name = "accesosToolStripMenuItem";
-            this.accesosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.accesosToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.accesosToolStripMenuItem.Text = "Accesos";
             // 
             // moduloToolStripMenuItem
             // 
             this.moduloToolStripMenuItem.Name = "moduloToolStripMenuItem";
-            this.moduloToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.moduloToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.moduloToolStripMenuItem.Text = "Modulo";
             // 
             // parametrosToolStripMenuItem
             // 
             this.parametrosToolStripMenuItem.Name = "parametrosToolStripMenuItem";
-            this.parametrosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.parametrosToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.parametrosToolStripMenuItem.Text = "Parametros";
             // 
-            // materialCard1
+            // materialButton3
             // 
-            this.materialCard1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard1.Controls.Add(this.materialCheckbox3);
-            this.materialCard1.Controls.Add(this.materialCheckbox2);
-            this.materialCard1.Controls.Add(this.materialCheckbox1);
-            this.materialCard1.Controls.Add(this.materialComboBox1);
-            this.materialCard1.Controls.Add(this.materialRadioButton2);
-            this.materialCard1.Controls.Add(this.materialRadioButton1);
-            this.materialCard1.Controls.Add(this.materialButton2);
-            this.materialCard1.Controls.Add(this.materialButton1);
-            this.materialCard1.Controls.Add(this.materialLabel4);
-            this.materialCard1.Controls.Add(this.materialTextBox4);
-            this.materialCard1.Controls.Add(this.materialLabel3);
-            this.materialCard1.Controls.Add(this.materialTextBox3);
-            this.materialCard1.Controls.Add(this.materialLabel2);
-            this.materialCard1.Controls.Add(this.materialTextBox2);
-            this.materialCard1.Controls.Add(this.materialLabel1);
-            this.materialCard1.Controls.Add(this.materialTextBox1);
-            this.materialCard1.Depth = 0;
-            this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(43, 17);
-            this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
-            this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard1.Name = "materialCard1";
-            this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard1.Size = new System.Drawing.Size(1109, 434);
-            this.materialCard1.TabIndex = 0;
-            // 
-            // materialTextBox1
-            // 
-            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox1.Depth = 0;
-            this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox1.LeadingIcon = null;
-            this.materialTextBox1.Location = new System.Drawing.Point(193, 99);
-            this.materialTextBox1.MaxLength = 50;
-            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox1.Multiline = false;
-            this.materialTextBox1.Name = "materialTextBox1";
-            this.materialTextBox1.Size = new System.Drawing.Size(578, 50);
-            this.materialTextBox1.TabIndex = 0;
-            this.materialTextBox1.Text = "";
-            this.materialTextBox1.TrailingIcon = null;
-            // 
-            // materialLabel1
-            // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(113, 130);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(57, 19);
-            this.materialLabel1.TabIndex = 1;
-            this.materialLabel1.Text = "Nombre";
-            // 
-            // materialLabel2
-            // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(103, 64);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(67, 19);
-            this.materialLabel2.TabIndex = 3;
-            this.materialLabel2.Text = "Identidad";
-            // 
-            // materialTextBox2
-            // 
-            this.materialTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox2.Depth = 0;
-            this.materialTextBox2.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox2.LeadingIcon = null;
-            this.materialTextBox2.Location = new System.Drawing.Point(193, 33);
-            this.materialTextBox2.MaxLength = 50;
-            this.materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox2.Multiline = false;
-            this.materialTextBox2.Name = "materialTextBox2";
-            this.materialTextBox2.Size = new System.Drawing.Size(300, 50);
-            this.materialTextBox2.TabIndex = 2;
-            this.materialTextBox2.Text = "";
-            this.materialTextBox2.TrailingIcon = null;
-            // 
-            // materialLabel3
-            // 
-            this.materialLabel3.AutoSize = true;
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel3.Location = new System.Drawing.Point(111, 201);
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(64, 19);
-            this.materialLabel3.TabIndex = 5;
-            this.materialLabel3.Text = "Telefono";
-            // 
-            // materialTextBox3
-            // 
-            this.materialTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox3.Depth = 0;
-            this.materialTextBox3.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox3.LeadingIcon = null;
-            this.materialTextBox3.Location = new System.Drawing.Point(193, 170);
-            this.materialTextBox3.MaxLength = 50;
-            this.materialTextBox3.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox3.Multiline = false;
-            this.materialTextBox3.Name = "materialTextBox3";
-            this.materialTextBox3.Size = new System.Drawing.Size(300, 50);
-            this.materialTextBox3.TabIndex = 4;
-            this.materialTextBox3.Text = "";
-            this.materialTextBox3.TrailingIcon = null;
-            // 
-            // materialLabel4
-            // 
-            this.materialLabel4.AutoSize = true;
-            this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel4.Location = new System.Drawing.Point(111, 275);
-            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(67, 19);
-            this.materialLabel4.TabIndex = 7;
-            this.materialLabel4.Text = "Direccion";
-            // 
-            // materialTextBox4
-            // 
-            this.materialTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox4.Depth = 0;
-            this.materialTextBox4.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox4.LeadingIcon = null;
-            this.materialTextBox4.Location = new System.Drawing.Point(193, 244);
-            this.materialTextBox4.MaxLength = 50;
-            this.materialTextBox4.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox4.Multiline = false;
-            this.materialTextBox4.Name = "materialTextBox4";
-            this.materialTextBox4.Size = new System.Drawing.Size(578, 50);
-            this.materialTextBox4.TabIndex = 6;
-            this.materialTextBox4.Text = "";
-            this.materialTextBox4.TrailingIcon = null;
-            // 
-            // materialButton1
-            // 
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(264, 336);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.Size = new System.Drawing.Size(88, 36);
-            this.materialButton1.TabIndex = 8;
-            this.materialButton1.Text = "Guardar";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
-            // 
-            // materialButton2
-            // 
-            this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton2.Depth = 0;
-            this.materialButton2.HighEmphasis = true;
-            this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(388, 336);
-            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton2.Name = "materialButton2";
-            this.materialButton2.Size = new System.Drawing.Size(96, 36);
-            this.materialButton2.TabIndex = 9;
-            this.materialButton2.Text = "Cancelar";
-            this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton2.UseAccentColor = false;
-            this.materialButton2.UseVisualStyleBackColor = true;
-            // 
-            // materialRadioButton1
-            // 
-            this.materialRadioButton1.AutoSize = true;
-            this.materialRadioButton1.Depth = 0;
-            this.materialRadioButton1.Location = new System.Drawing.Point(872, 21);
-            this.materialRadioButton1.Margin = new System.Windows.Forms.Padding(0);
-            this.materialRadioButton1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialRadioButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRadioButton1.Name = "materialRadioButton1";
-            this.materialRadioButton1.Ripple = true;
-            this.materialRadioButton1.Size = new System.Drawing.Size(85, 37);
-            this.materialRadioButton1.TabIndex = 10;
-            this.materialRadioButton1.TabStop = true;
-            this.materialRadioButton1.Text = "Soltero";
-            this.materialRadioButton1.UseVisualStyleBackColor = true;
-            // 
-            // materialRadioButton2
-            // 
-            this.materialRadioButton2.AutoSize = true;
-            this.materialRadioButton2.Depth = 0;
-            this.materialRadioButton2.Location = new System.Drawing.Point(872, 64);
-            this.materialRadioButton2.Margin = new System.Windows.Forms.Padding(0);
-            this.materialRadioButton2.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialRadioButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRadioButton2.Name = "materialRadioButton2";
-            this.materialRadioButton2.Ripple = true;
-            this.materialRadioButton2.Size = new System.Drawing.Size(89, 37);
-            this.materialRadioButton2.TabIndex = 11;
-            this.materialRadioButton2.TabStop = true;
-            this.materialRadioButton2.Text = "Casado";
-            this.materialRadioButton2.UseVisualStyleBackColor = true;
-            // 
-            // materialComboBox1
-            // 
-            this.materialComboBox1.AutoResize = false;
-            this.materialComboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialComboBox1.Depth = 0;
-            this.materialComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.materialComboBox1.DropDownHeight = 174;
-            this.materialComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.materialComboBox1.DropDownWidth = 121;
-            this.materialComboBox1.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialComboBox1.FormattingEnabled = true;
-            this.materialComboBox1.IntegralHeight = false;
-            this.materialComboBox1.ItemHeight = 43;
-            this.materialComboBox1.Items.AddRange(new object[] {
-            "Uno",
-            "Dos",
-            "Tres"});
-            this.materialComboBox1.Location = new System.Drawing.Point(839, 104);
-            this.materialComboBox1.MaxDropDownItems = 4;
-            this.materialComboBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialComboBox1.Name = "materialComboBox1";
-            this.materialComboBox1.Size = new System.Drawing.Size(223, 49);
-            this.materialComboBox1.StartIndex = 0;
-            this.materialComboBox1.TabIndex = 12;
-            // 
-            // materialCheckbox1
-            // 
-            this.materialCheckbox1.AutoSize = true;
-            this.materialCheckbox1.Depth = 0;
-            this.materialCheckbox1.Location = new System.Drawing.Point(858, 159);
-            this.materialCheckbox1.Margin = new System.Windows.Forms.Padding(0);
-            this.materialCheckbox1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialCheckbox1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCheckbox1.Name = "materialCheckbox1";
-            this.materialCheckbox1.Ripple = true;
-            this.materialCheckbox1.Size = new System.Drawing.Size(89, 37);
-            this.materialCheckbox1.TabIndex = 13;
-            this.materialCheckbox1.Text = "Opcion ";
-            this.materialCheckbox1.UseVisualStyleBackColor = true;
-            // 
-            // materialCheckbox2
-            // 
-            this.materialCheckbox2.AutoSize = true;
-            this.materialCheckbox2.Depth = 0;
-            this.materialCheckbox2.Location = new System.Drawing.Point(858, 201);
-            this.materialCheckbox2.Margin = new System.Windows.Forms.Padding(0);
-            this.materialCheckbox2.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialCheckbox2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCheckbox2.Name = "materialCheckbox2";
-            this.materialCheckbox2.Ripple = true;
-            this.materialCheckbox2.Size = new System.Drawing.Size(98, 37);
-            this.materialCheckbox2.TabIndex = 14;
-            this.materialCheckbox2.Text = "Opcion 2";
-            this.materialCheckbox2.UseVisualStyleBackColor = true;
-            // 
-            // materialCheckbox3
-            // 
-            this.materialCheckbox3.AutoSize = true;
-            this.materialCheckbox3.Depth = 0;
-            this.materialCheckbox3.Location = new System.Drawing.Point(863, 244);
-            this.materialCheckbox3.Margin = new System.Windows.Forms.Padding(0);
-            this.materialCheckbox3.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialCheckbox3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCheckbox3.Name = "materialCheckbox3";
-            this.materialCheckbox3.Ripple = true;
-            this.materialCheckbox3.Size = new System.Drawing.Size(98, 37);
-            this.materialCheckbox3.TabIndex = 15;
-            this.materialCheckbox3.Text = "Opcion 3";
-            this.materialCheckbox3.UseVisualStyleBackColor = true;
+            this.materialButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton3.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton3.Depth = 0;
+            this.materialButton3.HighEmphasis = true;
+            this.materialButton3.Icon = null;
+            this.materialButton3.Location = new System.Drawing.Point(524, 21);
+            this.materialButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton3.Name = "materialButton3";
+            this.materialButton3.Size = new System.Drawing.Size(88, 36);
+            this.materialButton3.TabIndex = 17;
+            this.materialButton3.Text = "Mostrar Login";
+            this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton3.UseAccentColor = false;
+            this.materialButton3.UseVisualStyleBackColor = true;
+            this.materialButton3.Click += new System.EventHandler(this.materialButton3_Click);
             // 
             // frmPrincipal
             // 
@@ -841,25 +875,25 @@ namespace COBRANZAS
             this.Controls.Add(this.menuPrincipal);
             this.DrawerShowIconsWhenHidden = true;
             this.DrawerTabControl = this.tabMenuPrincipal;
+            this.DrawerUseColors = true;
             this.MainMenuStrip = this.menuPrincipal;
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Cobranzas";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tabMenuPrincipal.ResumeLayout(false);
             this.tabClientes.ResumeLayout(false);
-            this.tabServicios.ResumeLayout(false);
-            this.tabMorisidad.ResumeLayout(false);
-            this.tabConfiguraciones.ResumeLayout(false);
             this.tabOpcionClientes.ResumeLayout(false);
             this.tabClientesRegistro.ResumeLayout(false);
+            this.materialCard1.ResumeLayout(false);
+            this.materialCard1.PerformLayout();
+            this.tabServicios.ResumeLayout(false);
             this.tabOpcionServicios.ResumeLayout(false);
+            this.tabMorisidad.ResumeLayout(false);
             this.tabOpcionMorosidad.ResumeLayout(false);
+            this.tabConfiguraciones.ResumeLayout(false);
             this.tabOpcionConfiguraciones.ResumeLayout(false);
             this.menuPrincipal.ResumeLayout(false);
             this.menuPrincipal.PerformLayout();
-            this.materialCard1.ResumeLayout(false);
-            this.materialCard1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -927,6 +961,8 @@ namespace COBRANZAS
         private MaterialSkin.Controls.MaterialCheckbox materialCheckbox3;
         private MaterialSkin.Controls.MaterialCheckbox materialCheckbox2;
         private MaterialSkin.Controls.MaterialCheckbox materialCheckbox1;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private MaterialSkin.Controls.MaterialButton materialButton3;
     }
 }
 

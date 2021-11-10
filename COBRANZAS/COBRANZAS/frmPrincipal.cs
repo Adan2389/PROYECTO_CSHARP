@@ -1,6 +1,7 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
+using COBRANZAS.Herramientas;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,9 +21,16 @@ namespace COBRANZAS
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE);
         }
 
+        private void materialButton3_Click(object sender, EventArgs e)
+        {
+            frmLogin objLogin = new frmLogin();
+            objLogin.Cargar("Sistema", 5);
+            objLogin.ShowDialog();
+                       
+        }
     }
 }
