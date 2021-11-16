@@ -28,7 +28,6 @@ namespace COBRANZAS
         private void materialButton3_Click(object sender, EventArgs e)
         {
             frmLogin objLogin = new frmLogin();
-            objLogin.Cargar("Sistema", 5);
             objLogin.ShowDialog();
                        
         }
