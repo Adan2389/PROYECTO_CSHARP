@@ -17,6 +17,7 @@ namespace COBRANZAS.CLIENTES
         
         }
 
+        // Consulta la informacion de 1 cliente
         public TModelClientes Consultar(int Id) {
             using (SqlConnection con = new SqlConnection(objParamSql.getStringCon())) {
                 try
@@ -40,6 +41,8 @@ namespace COBRANZAS.CLIENTES
                             cliente.UsuarioMofica = Fila["USUARIO_MODIFICACION"].ToString();
                             DateTime Fecha_Creacion = new DateTime(); ;
                             cliente.FechaCreacion = (DateTime.TryParse(Fila["FECHA_CREACION"].ToString(), out Fecha_Creacion) ? Fecha_Creacion : Fecha_Creacion);
+                            DateTime FechaNac = new DateTime();
+                            cliente.FechaNacimiento = (DateTime.TryParse(Fila["FECHA_NACIMIENTO"].ToString(), out FechaNac) ? FechaNac : FechaNac);
                         }
                     }
                     con.Close();
@@ -52,6 +55,7 @@ namespace COBRANZAS.CLIENTES
             return cliente;
         }
 
+        // Guarda un nuevo registro de 1 cliente
         public bool Guardar(TModelClientes prmCliente, String prmUsuario) {
             bool ValResul = false;
             using ( SqlConnection con = new SqlConnection(objParamSql.getStringCon())) {
@@ -81,9 +85,37 @@ namespace COBRANZAS.CLIENTES
             return ValResul;
         }
 
-        public bool Actualizar(TModelClientes prmCliente)
+        public bool Modificar(TModelClientes prmCliente, String prmUsuario)
         {
-
+            bool ValResul = false;
+            using (SqlConnection con = new SqlConnection(objParamSql.getStringCon()))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand sql = new SqlCommand("SP_ACTUALIZAR_CLIENTES", con);
+                    sql.CommandType = CommandType.StoredProcedure;
+                    sql.Parameters.AddWithValue("@prmId", prmCliente.Id);
+                    sql.Parameters.AddWithValue("@prmIdentidad", prmCliente.Identidad);
+                    sql.Parameters.AddWithValue("@prmNombre", prmCliente.Nombre);
+                    sql.Parameters.AddWithValue("@prmDireccion", prmCliente.Direccion);
+                    sql.Parameters.AddWithValue("@prmTelefono", prmCliente.Telefono);
+                    sql.Parameters.AddWithValue("@prmCorreo", prmCliente.Correo);
+                    sql.Parameters.AddWithValue("@prmMunicipio", prmCliente.Municipio);
+                    sql.Parameters.AddWithValue("@prmFechaNacimiento", prmCliente.FechaNacimiento);
+                    sql.Parameters.AddWithValue("@prmUsuario", prmUsuario);
+                    sql.Parameters.AddWithValue("@Result", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
+                    sql.ExecuteNonQuery();
+                    int Num = (int)sql.Parameters["@Result"].Value;
+                    if (Num == 1)
+                        ValResul = true;
+                }
+                catch (Exception Err)
+                {
+                    MessageBox.Show($"La operacion no se pudo completar \n {Err.Message}");
+                }
+            }
+            return ValResul;
             return false;
         }
 
