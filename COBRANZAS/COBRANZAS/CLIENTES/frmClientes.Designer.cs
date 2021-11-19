@@ -30,6 +30,9 @@ namespace COBRANZAS.CLIENTES
         private void InitializeComponent()
         {
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.lblModificadoPor = new MaterialSkin.Controls.MaterialLabel();
+            this.lblFechaModif = new MaterialSkin.Controls.MaterialLabel();
+            this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
             this.lblCreadoPor = new MaterialSkin.Controls.MaterialLabel();
             this.lblCreadoEl = new MaterialSkin.Controls.MaterialLabel();
             this.txtMunicipio = new MaterialSkin.Controls.MaterialTextBox();
@@ -48,13 +51,12 @@ namespace COBRANZAS.CLIENTES
             this.txtNombre = new MaterialSkin.Controls.MaterialTextBox();
             this.DSFSDFDS = new MaterialSkin.Controls.MaterialLabel();
             this.txtId = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialListBox1 = new MaterialSkin.Controls.MaterialListBox();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
-            this.lblModificadoPor = new MaterialSkin.Controls.MaterialLabel();
-            this.lblFechaModif = new MaterialSkin.Controls.MaterialLabel();
+            this.Col_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Identidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
@@ -83,7 +85,6 @@ namespace COBRANZAS.CLIENTES
             this.materialCard1.Controls.Add(this.txtNombre);
             this.materialCard1.Controls.Add(this.DSFSDFDS);
             this.materialCard1.Controls.Add(this.txtId);
-            this.materialCard1.Controls.Add(this.materialListBox1);
             this.materialCard1.Controls.Add(this.dgvClientes);
             this.materialCard1.Controls.Add(this.materialLabel1);
             this.materialCard1.Controls.Add(this.materialButton1);
@@ -96,6 +97,51 @@ namespace COBRANZAS.CLIENTES
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard1.Size = new System.Drawing.Size(1275, 575);
             this.materialCard1.TabIndex = 0;
+            // 
+            // lblModificadoPor
+            // 
+            this.lblModificadoPor.AutoSize = true;
+            this.lblModificadoPor.Depth = 0;
+            this.lblModificadoPor.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lblModificadoPor.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblModificadoPor.Location = new System.Drawing.Point(859, 538);
+            this.lblModificadoPor.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblModificadoPor.Name = "lblModificadoPor";
+            this.lblModificadoPor.Size = new System.Drawing.Size(113, 19);
+            this.lblModificadoPor.TabIndex = 24;
+            this.lblModificadoPor.Text = "Modificado por:";
+            // 
+            // lblFechaModif
+            // 
+            this.lblFechaModif.AutoSize = true;
+            this.lblFechaModif.Depth = 0;
+            this.lblFechaModif.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lblFechaModif.ForeColor = System.Drawing.Color.LightGray;
+            this.lblFechaModif.Location = new System.Drawing.Point(560, 538);
+            this.lblFechaModif.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblFechaModif.Name = "lblFechaModif";
+            this.lblFechaModif.Size = new System.Drawing.Size(141, 19);
+            this.lblFechaModif.TabIndex = 23;
+            this.lblFechaModif.Text = "Fecha Modificacion";
+            // 
+            // materialButton3
+            // 
+            this.materialButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton3.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton3.Depth = 0;
+            this.materialButton3.HighEmphasis = true;
+            this.materialButton3.Icon = null;
+            this.materialButton3.Location = new System.Drawing.Point(475, 449);
+            this.materialButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton3.Name = "materialButton3";
+            this.materialButton3.Size = new System.Drawing.Size(79, 36);
+            this.materialButton3.TabIndex = 22;
+            this.materialButton3.Text = "Limpiar";
+            this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton3.UseAccentColor = false;
+            this.materialButton3.UseVisualStyleBackColor = true;
+            this.materialButton3.Click += new System.EventHandler(this.materialButton3_Click);
             // 
             // lblCreadoPor
             // 
@@ -349,26 +395,16 @@ namespace COBRANZAS.CLIENTES
             this.txtId.Text = "";
             this.txtId.TrailingIcon = null;
             // 
-            // materialListBox1
-            // 
-            this.materialListBox1.BackColor = System.Drawing.Color.White;
-            this.materialListBox1.BorderColor = System.Drawing.Color.LightGray;
-            this.materialListBox1.Depth = 0;
-            this.materialListBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialListBox1.Location = new System.Drawing.Point(594, 17);
-            this.materialListBox1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialListBox1.Name = "materialListBox1";
-            this.materialListBox1.SelectedIndex = -1;
-            this.materialListBox1.SelectedItem = null;
-            this.materialListBox1.Size = new System.Drawing.Size(620, 186);
-            this.materialListBox1.TabIndex = 18;
-            // 
             // dgvClientes
             // 
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(594, 231);
+            this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Col_Id,
+            this.Col_Identidad,
+            this.Col_Nombre});
+            this.dgvClientes.Location = new System.Drawing.Point(581, 82);
             this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.Size = new System.Drawing.Size(620, 271);
+            this.dgvClientes.Size = new System.Drawing.Size(663, 420);
             this.dgvClientes.TabIndex = 19;
             // 
             // materialLabel1
@@ -402,50 +438,22 @@ namespace COBRANZAS.CLIENTES
             this.materialButton1.UseVisualStyleBackColor = true;
             this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
             // 
-            // materialButton3
+            // Col_Id
             // 
-            this.materialButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton3.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton3.Depth = 0;
-            this.materialButton3.HighEmphasis = true;
-            this.materialButton3.Icon = null;
-            this.materialButton3.Location = new System.Drawing.Point(475, 449);
-            this.materialButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton3.Name = "materialButton3";
-            this.materialButton3.Size = new System.Drawing.Size(79, 36);
-            this.materialButton3.TabIndex = 22;
-            this.materialButton3.Text = "Limpiar";
-            this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton3.UseAccentColor = false;
-            this.materialButton3.UseVisualStyleBackColor = true;
-            this.materialButton3.Click += new System.EventHandler(this.materialButton3_Click);
+            this.Col_Id.HeaderText = "Id";
+            this.Col_Id.Name = "Col_Id";
+            this.Col_Id.Width = 50;
             // 
-            // lblModificadoPor
+            // Col_Identidad
             // 
-            this.lblModificadoPor.AutoSize = true;
-            this.lblModificadoPor.Depth = 0;
-            this.lblModificadoPor.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblModificadoPor.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblModificadoPor.Location = new System.Drawing.Point(859, 538);
-            this.lblModificadoPor.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblModificadoPor.Name = "lblModificadoPor";
-            this.lblModificadoPor.Size = new System.Drawing.Size(113, 19);
-            this.lblModificadoPor.TabIndex = 24;
-            this.lblModificadoPor.Text = "Modificado por:";
+            this.Col_Identidad.HeaderText = "Identidad";
+            this.Col_Identidad.Name = "Col_Identidad";
             // 
-            // lblFechaModif
+            // Col_Nombre
             // 
-            this.lblFechaModif.AutoSize = true;
-            this.lblFechaModif.Depth = 0;
-            this.lblFechaModif.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblFechaModif.ForeColor = System.Drawing.Color.LightGray;
-            this.lblFechaModif.Location = new System.Drawing.Point(560, 538);
-            this.lblFechaModif.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblFechaModif.Name = "lblFechaModif";
-            this.lblFechaModif.Size = new System.Drawing.Size(141, 19);
-            this.lblFechaModif.TabIndex = 23;
-            this.lblFechaModif.Text = "Fecha Modificacion";
+            this.Col_Nombre.HeaderText = "Nombre";
+            this.Col_Nombre.Name = "Col_Nombre";
+            this.Col_Nombre.Width = 200;
             // 
             // frmClientes
             // 
@@ -455,6 +463,7 @@ namespace COBRANZAS.CLIENTES
             this.Controls.Add(this.materialCard1);
             this.Name = "frmClientes";
             this.Text = "frmClientes";
+            this.Load += new System.EventHandler(this.frmClientes_Load);
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
@@ -468,7 +477,6 @@ namespace COBRANZAS.CLIENTES
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialButton materialButton1;
         private System.Windows.Forms.DataGridView dgvClientes;
-        private MaterialSkin.Controls.MaterialListBox materialListBox1;
         private MaterialSkin.Controls.MaterialTextBox txtId;
         private MaterialSkin.Controls.MaterialTextBox txtNombre;
         private MaterialSkin.Controls.MaterialLabel DSFSDFDS;
@@ -490,5 +498,8 @@ namespace COBRANZAS.CLIENTES
         private MaterialSkin.Controls.MaterialButton materialButton3;
         private MaterialSkin.Controls.MaterialLabel lblModificadoPor;
         private MaterialSkin.Controls.MaterialLabel lblFechaModif;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Identidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Nombre;
     }
 }

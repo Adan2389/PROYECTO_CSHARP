@@ -2,6 +2,7 @@
 using COBRANZAS.AdminDB;
 using COBRANZAS.Model;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -12,6 +13,7 @@ namespace COBRANZAS.CLIENTES
     {
         TParamSql objParamSql = new TParamSql();
         TModelClientes cliente = new TModelClientes();
+        List<TModelClientes> lstClientes = new List<TModelClientes>();
 
         public TAD_Clientes() { 
         
@@ -55,6 +57,41 @@ namespace COBRANZAS.CLIENTES
             return cliente;
         }
 
+        // Devulve la lista clientes
+        public List<TModelClientes> GetClientes() {
+            List<TModelClientes> Clientes = new List<TModelClientes>();
+            
+            using (SqlConnection con = new SqlConnection(objParamSql.getStringCon()))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand query = new SqlCommand("SP_LISTAR_CLIENTES", con);
+                    DataTable dtDatos = new DataTable();
+                    dtDatos.Load(query.ExecuteReader());
+                    if (dtDatos.Rows.Count > 0) {
+                        foreach (DataRow Fila in dtDatos.Rows)
+                        {
+                            Clientes.Add(new TModelClientes
+                            {
+                                Id = (int)Fila["ID"],
+                                Nombre = Fila["NOMBRE"].ToString(),
+                                Identidad = Fila["IDENTIDAD"].ToString(),
+                                Telefono = Fila["TELEFONO"].ToString(),
+                                Correo = Fila["CORREO"].ToString(),
+                                Municipio = Fila["MUNICIPIO"].ToString(),
+                                FechaNacimiento = (DateTime)Fila["FECHA_NACIMIENTO"]
+                            });    
+                        }
+                    }
+                }
+                catch(Exception e) {
+                    MessageBox.Show($"La operacion no se pudo completar comunique con el equipo de soporte sistemas \n {e.Message} ");          
+                }
+            }
+            return Clientes;
+        }
+      
         // Guarda un nuevo registro de 1 cliente
         public bool Guardar(TModelClientes prmCliente, String prmUsuario) {
             bool ValResul = false;
@@ -85,6 +122,7 @@ namespace COBRANZAS.CLIENTES
             return ValResul;
         }
 
+        // Modifica los datos de un clientes
         public bool Modificar(TModelClientes prmCliente, String prmUsuario)
         {
             bool ValResul = false;

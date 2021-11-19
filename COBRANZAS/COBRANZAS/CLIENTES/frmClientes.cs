@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin;
 
 namespace COBRANZAS.CLIENTES
 {
@@ -26,6 +27,7 @@ namespace COBRANZAS.CLIENTES
             this.ACCION = 1;
         }
 
+        // Limpia los controles del formulario
         private void Limpiar()
         {
             txtId.Text = "";
@@ -45,6 +47,18 @@ namespace COBRANZAS.CLIENTES
             this.ACCION = 1;
             txtId.Enabled = true;
         }
+
+        private void CargarGrid() {
+            dgvClientes.Rows.Clear();
+            List<TModelClientes> clientes = this.CN_Clientes.GetClientes();
+            foreach( var x in clientes) {
+                dgvClientes.Rows.Add(x.Id, x.Identidad, x.Nombre);    
+            } 
+        }
+
+
+
+
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
@@ -72,7 +86,6 @@ namespace COBRANZAS.CLIENTES
         private void materialButton2_Click(object sender, EventArgs e)
         {
             TModelClientes cliente = new TModelClientes();
-            cliente.Id = Convert.ToInt32(txtId.Text);
             cliente.Identidad = txtIdentidad.Text;
             cliente.Nombre = txtNombre.Text;
             cliente.Direccion = txtDireccion.Text;
@@ -85,8 +98,10 @@ namespace COBRANZAS.CLIENTES
             if(this.ACCION == 1)
                 res =  this.CN_Clientes.Guardar(cliente, this.USUARIO);
 
-            if(this.ACCION == 2)
+            if (this.ACCION == 2) { 
+                cliente.Id = Convert.ToInt32(txtId.Text);
                 res = this.CN_Clientes.Modificar(cliente, this.USUARIO);
+            }
 
             if (res){ 
                 MessageBox.Show("El cliente se ha guardado con exito", "ACEPTAR", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -95,11 +110,18 @@ namespace COBRANZAS.CLIENTES
             else
                 MessageBox.Show("El cliente no se ha podido guardar", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
+            this.CargarGrid();
+
         }
 
         private void materialButton3_Click(object sender, EventArgs e)
         {
             this.Limpiar();
+        }
+
+        private void frmClientes_Load(object sender, EventArgs e)
+        {
+            this.CargarGrid();   
         }
     }
 }
