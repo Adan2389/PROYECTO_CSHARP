@@ -52,7 +52,15 @@ namespace COBRANZAS.CLIENTES
             dgvClientes.Rows.Clear();
             List<TModelClientes> clientes = this.CN_Clientes.GetClientes();
             foreach( var x in clientes) {
-                dgvClientes.Rows.Add(x.Id, x.Identidad, x.Nombre);    
+                dgvClientes.Rows.Add(x.Id, 
+                                     x.Identidad, 
+                                     x.Nombre, 
+                                     x.Correo, 
+                                     x.Telefono, 
+                                     x.Direccion, 
+                                     x.Municipio,
+                                     x.FechaNacimiento, 
+                                     x.UsuarioCreacion);    
             } 
         }
 
@@ -122,6 +130,25 @@ namespace COBRANZAS.CLIENTES
         private void frmClientes_Load(object sender, EventArgs e)
         {
             this.CargarGrid();   
+        }
+
+        private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int NumFila = e.RowIndex;
+            txtId.Text = dgvClientes.Rows[NumFila].Cells["Col_Id"].Value.ToString();
+            txtIdentidad.Text = dgvClientes.Rows[NumFila].Cells["Col_Identidad"].Value.ToString();
+            txtNombre.Text = dgvClientes.Rows[NumFila].Cells["Col_Nombre"].Value.ToString();
+            txtDireccion.Text = dgvClientes.Rows[NumFila].Cells["Col_Direccion"].Value.ToString();
+            txtCorreo.Text = dgvClientes.Rows[NumFila].Cells["Col_Correo"].Value.ToString();
+            txtTelefono.Text = dgvClientes.Rows[NumFila].Cells["Col_Telefono"].Value.ToString();
+            txtMunicipio.Text = dgvClientes.Rows[NumFila].Cells["Col_Municipio"].Value.ToString();
+            dtpFechaNac.Text = dgvClientes.Rows[NumFila].Cells["Col_Fecha_Nacimiento"].Value.ToString();
+            this.ACCION = 2;
         }
     }
 }

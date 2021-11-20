@@ -75,12 +75,14 @@ namespace COBRANZAS.CLIENTES
                             Clientes.Add(new TModelClientes
                             {
                                 Id = (int)Fila["ID"],
-                                Nombre = Fila["NOMBRE"].ToString(),
                                 Identidad = Fila["IDENTIDAD"].ToString(),
+                                Nombre = Fila["NOMBRE"].ToString(),
                                 Telefono = Fila["TELEFONO"].ToString(),
                                 Correo = Fila["CORREO"].ToString(),
                                 Municipio = Fila["MUNICIPIO"].ToString(),
-                                FechaNacimiento = (DateTime)Fila["FECHA_NACIMIENTO"]
+                                FechaNacimiento = (DateTime)Fila["FECHA_NACIMIENTO"],
+                                Direccion = Fila["DIRECCION"].ToString(),
+                                UsuarioCreacion = Fila["USUARIO_CREACION"].ToString()
                             });    
                         }
                     }

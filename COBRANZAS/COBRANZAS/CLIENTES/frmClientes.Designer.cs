@@ -57,6 +57,12 @@ namespace COBRANZAS.CLIENTES
             this.Col_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_Identidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Municipio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Fecha_Nacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
@@ -95,7 +101,7 @@ namespace COBRANZAS.CLIENTES
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard1.Size = new System.Drawing.Size(1275, 575);
+            this.materialCard1.Size = new System.Drawing.Size(1363, 575);
             this.materialCard1.TabIndex = 0;
             // 
             // lblModificadoPor
@@ -397,15 +403,26 @@ namespace COBRANZAS.CLIENTES
             // 
             // dgvClientes
             // 
+            this.dgvClientes.AllowUserToAddRows = false;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Col_Id,
             this.Col_Identidad,
-            this.Col_Nombre});
-            this.dgvClientes.Location = new System.Drawing.Point(581, 82);
+            this.Col_Nombre,
+            this.Col_Correo,
+            this.Col_Telefono,
+            this.Col_Direccion,
+            this.Col_Municipio,
+            this.Col_Fecha_Nacimiento,
+            this.Col_Usuario});
+            this.dgvClientes.Location = new System.Drawing.Point(581, 37);
             this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.Size = new System.Drawing.Size(663, 420);
+            this.dgvClientes.ReadOnly = true;
+            this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvClientes.Size = new System.Drawing.Size(765, 465);
             this.dgvClientes.TabIndex = 19;
+            this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
+            this.dgvClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellDoubleClick);
             // 
             // materialLabel1
             // 
@@ -442,18 +459,61 @@ namespace COBRANZAS.CLIENTES
             // 
             this.Col_Id.HeaderText = "Id";
             this.Col_Id.Name = "Col_Id";
+            this.Col_Id.ReadOnly = true;
             this.Col_Id.Width = 50;
             // 
             // Col_Identidad
             // 
             this.Col_Identidad.HeaderText = "Identidad";
             this.Col_Identidad.Name = "Col_Identidad";
+            this.Col_Identidad.ReadOnly = true;
             // 
             // Col_Nombre
             // 
             this.Col_Nombre.HeaderText = "Nombre";
             this.Col_Nombre.Name = "Col_Nombre";
+            this.Col_Nombre.ReadOnly = true;
             this.Col_Nombre.Width = 200;
+            // 
+            // Col_Correo
+            // 
+            this.Col_Correo.HeaderText = "Correo";
+            this.Col_Correo.Name = "Col_Correo";
+            this.Col_Correo.ReadOnly = true;
+            this.Col_Correo.Width = 150;
+            // 
+            // Col_Telefono
+            // 
+            this.Col_Telefono.HeaderText = "Telefono";
+            this.Col_Telefono.Name = "Col_Telefono";
+            this.Col_Telefono.ReadOnly = true;
+            this.Col_Telefono.Width = 80;
+            // 
+            // Col_Direccion
+            // 
+            this.Col_Direccion.HeaderText = "Direccion";
+            this.Col_Direccion.Name = "Col_Direccion";
+            this.Col_Direccion.ReadOnly = true;
+            this.Col_Direccion.Width = 200;
+            // 
+            // Col_Municipio
+            // 
+            this.Col_Municipio.HeaderText = "Municipio";
+            this.Col_Municipio.Name = "Col_Municipio";
+            this.Col_Municipio.ReadOnly = true;
+            // 
+            // Col_Fecha_Nacimiento
+            // 
+            this.Col_Fecha_Nacimiento.HeaderText = "Fecha Nacimiento";
+            this.Col_Fecha_Nacimiento.Name = "Col_Fecha_Nacimiento";
+            this.Col_Fecha_Nacimiento.ReadOnly = true;
+            this.Col_Fecha_Nacimiento.Width = 80;
+            // 
+            // Col_Usuario
+            // 
+            this.Col_Usuario.HeaderText = "Usuario";
+            this.Col_Usuario.Name = "Col_Usuario";
+            this.Col_Usuario.ReadOnly = true;
             // 
             // frmClientes
             // 
@@ -501,5 +561,11 @@ namespace COBRANZAS.CLIENTES
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Identidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Correo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Municipio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Fecha_Nacimiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Usuario;
     }
 }
