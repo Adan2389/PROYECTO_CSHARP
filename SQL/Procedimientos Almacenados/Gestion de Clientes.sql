@@ -24,8 +24,8 @@ BEGIN
 		Declare @newID int =0
 		SELECT @newID = ISNULL(MAX(ID),0)+1 FROM CLIENTES
 
-		INSERT INTO CLIENTES(ID, IDENTIDAD, NOMBRE, DIRECCION, TELEFONO, CORREO, MUNICIPIO, FECHA_NACIMIENTO, FECHA_CREACION, USUARIO_CREACION )
-		VALUES (@newID, @prmIdentidad, @prmNombre, @prmDireccion, @prmTelefono, @prmCorreo, @prmMunicipio, @prmFechaNacimiento, GETDATE(), @prmUsuario )
+		INSERT INTO CLIENTES(ID, IDENTIDAD, NOMBRE, DIRECCION, TELEFONO, CORREO, MUNICIPIO, FECHA_NACIMIENTO, FECHA_CREACION, USUARIO_CREACION, ACTIVO )
+		VALUES (@newID, @prmIdentidad, @prmNombre, @prmDireccion, @prmTelefono, @prmCorreo, @prmMunicipio, @prmFechaNacimiento, GETDATE(), @prmUsuario, 1 )
 		COMMIT
 		Set @Result = 1
 	END TRY

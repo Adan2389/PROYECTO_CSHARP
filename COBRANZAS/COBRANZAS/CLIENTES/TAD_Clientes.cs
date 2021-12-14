@@ -21,30 +21,33 @@ namespace COBRANZAS.CLIENTES
 
         // Consulta la informacion de 1 cliente
         public TModelClientes Consultar(int Id) {
+            DataTable dtClientes = new DataTable();
+            TModelClientes Xcliente = new TModelClientes();
             using (SqlConnection con = new SqlConnection(objParamSql.getStringCon())) {
                 try
                 {
                     con.Open();
                     SqlCommand sql = new SqlCommand($" SELECT * FROM CLIENTES WHERE ID = {Id}", con);
-                    DataTable dtClientes = new DataTable();
+                   
                     dtClientes.Load(sql.ExecuteReader());
                     if (dtClientes.Rows.Count > 0)
                     {
                         foreach (DataRow Fila in dtClientes.Rows)
                         {
-                            cliente.Id = Convert.ToInt32(Fila["ID"].ToString());
-                            cliente.Nombre = Fila["NOMBRE"].ToString();
-                            cliente.Identidad = Fila["IDENTIDAD"].ToString();
-                            cliente.Direccion = Fila["DIRECCION"].ToString();
-                            cliente.Telefono = Fila["TELEFONO"].ToString();
-                            cliente.Correo = Fila["CORREO"].ToString();
-                            cliente.Municipio = Fila["MUNICIPIO"].ToString();
-                            cliente.UsuarioCreacion = Fila["USUARIO_CREACION"].ToString();
-                            cliente.UsuarioMofica = Fila["USUARIO_MODIFICACION"].ToString();
+                            Xcliente.Id = Convert.ToInt32(Fila["ID"].ToString());
+                            Xcliente.Nombre = Fila["NOMBRE"].ToString();
+                            Xcliente.Identidad = Fila["IDENTIDAD"].ToString();
+                            Xcliente.Direccion = Fila["DIRECCION"].ToString();
+                            Xcliente.Telefono = Fila["TELEFONO"].ToString();
+                            Xcliente.Correo = Fila["CORREO"].ToString();
+                            Xcliente.Municipio = Fila["MUNICIPIO"].ToString();
+                            Xcliente.UsuarioCreacion = Fila["USUARIO_CREACION"].ToString();
+                            Xcliente.UsuarioMofica = Fila["USUARIO_MODIFICACION"].ToString();
                             DateTime Fecha_Creacion = new DateTime(); ;
-                            cliente.FechaCreacion = (DateTime.TryParse(Fila["FECHA_CREACION"].ToString(), out Fecha_Creacion) ? Fecha_Creacion : Fecha_Creacion);
+                            Xcliente.FechaCreacion = (DateTime.TryParse(Fila["FECHA_CREACION"].ToString(), out Fecha_Creacion) ? Fecha_Creacion : Fecha_Creacion);
+                            Xcliente.FechaCreacion.ToString();
                             DateTime FechaNac = new DateTime();
-                            cliente.FechaNacimiento = (DateTime.TryParse(Fila["FECHA_NACIMIENTO"].ToString(), out FechaNac) ? FechaNac : FechaNac);
+                            Xcliente.FechaNacimiento = (DateTime.TryParse(Fila["FECHA_NACIMIENTO"].ToString(), out FechaNac) ? FechaNac : FechaNac);
                         }
                     }
                     con.Close();
@@ -54,13 +57,12 @@ namespace COBRANZAS.CLIENTES
                     MessageBox.Show($"La operacion no se pudo completar \n {Err.Message}" );
                 }
             }
-            return cliente;
+            return Xcliente;
         }
 
         // Devulve la lista clientes
         public List<TModelClientes> GetClientes() {
             List<TModelClientes> Clientes = new List<TModelClientes>();
-            
             using (SqlConnection con = new SqlConnection(objParamSql.getStringCon()))
             {
                 try
@@ -82,7 +84,8 @@ namespace COBRANZAS.CLIENTES
                                 Municipio = Fila["MUNICIPIO"].ToString(),
                                 FechaNacimiento = (DateTime)Fila["FECHA_NACIMIENTO"],
                                 Direccion = Fila["DIRECCION"].ToString(),
-                                UsuarioCreacion = Fila["USUARIO_CREACION"].ToString()
+                                UsuarioCreacion = Fila["USUARIO_CREACION"].ToString(),
+                                Activo =  ( Fila["ACTIVO"].ToString()=="True" ? true : false)
                             });    
                         }
                     }
@@ -161,8 +164,27 @@ namespace COBRANZAS.CLIENTES
 
         public bool Anular(int IdCliente )
         {
-
-            return false;
+            bool ValResul = false;
+            using (SqlConnection con = new SqlConnection(objParamSql.getStringCon()))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand sql = new SqlCommand("SP_ANULAR_CLIENTES", con);
+                    sql.CommandType = CommandType.StoredProcedure;
+                    sql.Parameters.AddWithValue("@prmId", IdCliente);
+                    sql.Parameters.AddWithValue("@Result", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
+                    sql.ExecuteNonQuery();
+                    int Num = (int)sql.Parameters["@Result"].Value;
+                    if (Num == 1)
+                        ValResul = true;
+                }
+                catch (Exception Err)
+                {
+                    MessageBox.Show($"La operacion no se pudo completar \n {Err.Message}");
+                }
+            }
+            return ValResul;
         }
 
     }

@@ -2,6 +2,7 @@
 using MaterialSkin.Controls;
 using System;
 using COBRANZAS.Herramientas;
+using COBRANZAS.CLIENTES;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,6 +31,16 @@ namespace COBRANZAS
             frmLogin objLogin = new frmLogin();
             objLogin.ShowDialog();
                        
+        }
+
+        private void registroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            
+            frmClientes objClientes = new frmClientes();
+            objClientes.FormBorderStyle = FormBorderStyle.None;
+            tabOpcionClientes.SelectTab(1);
+            objClientes.Show();
         }
     }
 }

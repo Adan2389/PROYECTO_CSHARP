@@ -46,8 +46,10 @@ namespace COBRANZAS.CLIENTES
             txtTelefono.Text = "";
             this.ACCION = 1;
             txtId.Enabled = true;
+            this.CargarGrid();
         }
 
+        // Carga la lista de clientes en DataGridView
         private void CargarGrid() {
             dgvClientes.Rows.Clear();
             List<TModelClientes> clientes = this.CN_Clientes.GetClientes();
@@ -60,8 +62,25 @@ namespace COBRANZAS.CLIENTES
                                      x.Direccion, 
                                      x.Municipio,
                                      x.FechaNacimiento, 
-                                     x.UsuarioCreacion);    
-            } 
+                                     x.UsuarioCreacion,
+                                     x.Activo);    
+            }
+            this.MarcarClientesDesha();
+        }
+
+        // Marca en color rojo los clientes deshabilitados
+        private void MarcarClientesDesha() {
+            int NumFilas = 0;
+            NumFilas = dgvClientes.Rows.Count;
+            if (NumFilas > 0) {
+                for (int i = 0; i< NumFilas; i++) {
+                    String ValActivo = "";
+                    ValActivo = dgvClientes.Rows[i].Cells["Col_Activo"].Value.ToString();
+                    if (ValActivo == "False") {
+                        dgvClientes.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(235,107,107);   
+                    }
+                }    
+            }
         }
 
 
@@ -88,7 +107,6 @@ namespace COBRANZAS.CLIENTES
                 this.ACCION = 2;
                 txtId.Enabled = false;
             }
-            dgvClientes.DataSource = cliente;
         }
 
         private void materialButton2_Click(object sender, EventArgs e)
@@ -103,23 +121,29 @@ namespace COBRANZAS.CLIENTES
             cliente.FechaNacimiento = dtpFechaNac.Value;
 
             bool  res = false;
-            if(this.ACCION == 1)
-                res =  this.CN_Clientes.Guardar(cliente, this.USUARIO);
+            String msj_valid = this.CN_Clientes.Validar(cliente);
+            if (msj_valid == "")
+            {
+                if(this.ACCION == 1)
+                    res =  this.CN_Clientes.Guardar(cliente, this.USUARIO);
 
-            if (this.ACCION == 2) { 
-                cliente.Id = Convert.ToInt32(txtId.Text);
-                res = this.CN_Clientes.Modificar(cliente, this.USUARIO);
-            }
+                if (this.ACCION == 2) { 
+                    cliente.Id = Convert.ToInt32(txtId.Text);
+                    res = this.CN_Clientes.Modificar(cliente, this.USUARIO);
+                }
+                if (res){ 
+                    MessageBox.Show("El cliente se ha guardado con exito", "ACEPTAR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
+                    this.CargarGrid();
+                }
+                else
+                    MessageBox.Show("El cliente no se ha podido guardar", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-            if (res){ 
-                MessageBox.Show("El cliente se ha guardado con exito", "ACEPTAR", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Limpiar();
             }
             else
-                MessageBox.Show("El cliente no se ha podido guardar", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-            this.CargarGrid();
-
+            {
+                MessageBox.Show(msj_valid, "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void materialButton3_Click(object sender, EventArgs e)
@@ -134,7 +158,6 @@ namespace COBRANZAS.CLIENTES
 
         private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
 
         private void dgvClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -150,5 +173,23 @@ namespace COBRANZAS.CLIENTES
             dtpFechaNac.Text = dgvClientes.Rows[NumFila].Cells["Col_Fecha_Nacimiento"].Value.ToString();
             this.ACCION = 2;
         }
+
+        private void materialButton4_Click(object sender, EventArgs e)
+        {
+            if (!(String.IsNullOrWhiteSpace(txtId.Text)))
+            {
+                if (this.CN_Clientes.Anular(txtId.Text))
+                {
+                    MessageBox.Show("El clientes se ha anulado con exito!", "ACEPTAR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Limpiar();
+                }
+                else
+                    MessageBox.Show("El cliente no se pudo anular!", "ACEPTAR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else {
+                MessageBox.Show("Es necesario seleccionar un cliente para anularlo!", "ACEPTAR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        
     }
 }
