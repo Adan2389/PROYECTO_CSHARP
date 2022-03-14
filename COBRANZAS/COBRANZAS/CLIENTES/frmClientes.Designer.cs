@@ -550,8 +550,14 @@ namespace COBRANZAS.CLIENTES
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1411, 706);
             this.Controls.Add(this.materialCard1);
+            this.FormStyle = MaterialSkin.Controls.MaterialForm.FormStyles.ActionBar_None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmClientes";
-            this.Text = "frmClientes";
+            this.Padding = new System.Windows.Forms.Padding(3, 24, 3, 3);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Registro de Clientes";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmClientes_Load);
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();

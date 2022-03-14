@@ -24,6 +24,7 @@ namespace COBRANZAS
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE);
+
         }
 
         private void materialButton3_Click(object sender, EventArgs e)
@@ -35,12 +36,35 @@ namespace COBRANZAS
 
         private void registroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-            
+
+            TabPage miTab = new TabPage();
+            miTab.Text = "Registro Clientes";
             frmClientes objClientes = new frmClientes();
             objClientes.FormBorderStyle = FormBorderStyle.None;
-            tabOpcionClientes.SelectTab(1);
+            objClientes.TopLevel = false;
             objClientes.Show();
+            miTab.Controls.Add(objClientes);
+            tabOpcionClientes.TabPages.Add(miTab);
+            tabOpcionClientes.SelectedTab = miTab;
+
+        }
+
+        private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TabPage miTab = new TabPage();
+            miTab.Text = "Consulta Clientes";
+            frmConsultaClientes objConsultaClientes = new frmConsultaClientes();
+            objConsultaClientes.FormBorderStyle = FormBorderStyle.None;
+            objConsultaClientes.TopLevel = false;
+            objConsultaClientes.Show();
+            miTab.Controls.Add(objConsultaClientes );
+            tabOpcionClientes.TabPages.Add(miTab);
+            tabOpcionClientes.SelectedTab = miTab;
+        }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

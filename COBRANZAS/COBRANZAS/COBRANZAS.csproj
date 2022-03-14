@@ -74,6 +74,12 @@
     <Compile Include="CLIENTES\frmClientes.Designer.cs">
       <DependentUpon>frmClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="CLIENTES\frmConsultaClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CLIENTES\frmConsultaClientes.Designer.cs">
+      <DependentUpon>frmConsultaClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="CLIENTES\TAD_Clientes.cs" />
     <Compile Include="CLIENTES\TCN_Clientes.cs" />
     <Compile Include="frmPrincipal.cs">
@@ -93,6 +99,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CLIENTES\frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CLIENTES\frmConsultaClientes.resx">
+      <DependentUpon>frmConsultaClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
@@ -125,6 +134,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Disenio\png\User.png" />
     <Content Include="icono app.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -133,7 +143,6 @@
     <Folder Include="Correo\" />
     <Folder Include="Disenio\ico\" />
     <Folder Include="Disenio\jpg\" />
-    <Folder Include="Disenio\png\" />
     <Folder Include="iconos\" />
     <Folder Include="MOROSIDAD\" />
     <Folder Include="Public\" />
