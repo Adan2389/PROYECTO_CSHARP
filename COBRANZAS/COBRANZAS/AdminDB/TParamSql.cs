@@ -23,5 +23,23 @@ namespace COBRANZAS.AdminDB
             return objBuilder.ConnectionString;
         }
 
+        public String getUser() {
+            return objBuilder.UserID;
+        }
+
+        public String getPassword()
+        {
+            return objBuilder.Password;
+        }
+
+        public String getServer()
+        {
+            return objBuilder.DataSource;
+        }
+        public String getDatabase()
+        {
+            return objBuilder.InitialCatalog;
+        }
+
     }
 }

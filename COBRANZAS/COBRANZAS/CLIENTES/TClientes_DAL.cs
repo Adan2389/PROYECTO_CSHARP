@@ -9,13 +9,13 @@ using System.Windows.Forms;
 
 namespace COBRANZAS.CLIENTES
 {
-    public class TAD_Clientes
+    public class TClientes_DAL
     {
         TParamSql objParamSql = new TParamSql();
         TModelClientes cliente = new TModelClientes();
         List<TModelClientes> lstClientes = new List<TModelClientes>();
 
-        public TAD_Clientes() { 
+        public TClientes_DAL() { 
         
         }
 

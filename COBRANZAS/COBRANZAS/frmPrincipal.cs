@@ -23,15 +23,17 @@ namespace COBRANZAS
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.EnforceBackcolorOnAllComponents = true;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE);
 
+            tabMenuPrincipal.Dock = DockStyle.Fill;
+            this.MaximumSize = SystemInformation.PrimaryMonitorMaximizedWindowSize;
         }
 
         private void materialButton3_Click(object sender, EventArgs e)
         {
             frmLogin objLogin = new frmLogin();
             objLogin.ShowDialog();
-                       
         }
 
         private void registroToolStripMenuItem_Click(object sender, EventArgs e)
@@ -43,10 +45,8 @@ namespace COBRANZAS
             objClientes.FormBorderStyle = FormBorderStyle.None;
             objClientes.TopLevel = false;
             objClientes.Show();
-            miTab.Controls.Add(objClientes);
-            tabOpcionClientes.TabPages.Add(miTab);
-            tabOpcionClientes.SelectedTab = miTab;
-
+            objClientes.BringToFront();
+            tabClientes.Controls.Add(objClientes);
         }
 
         private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -57,14 +57,8 @@ namespace COBRANZAS
             objConsultaClientes.FormBorderStyle = FormBorderStyle.None;
             objConsultaClientes.TopLevel = false;
             objConsultaClientes.Show();
-            miTab.Controls.Add(objConsultaClientes );
-            tabOpcionClientes.TabPages.Add(miTab);
-            tabOpcionClientes.SelectedTab = miTab;
+            tabClientes.Controls.Add(objConsultaClientes);
         }
-
-        private void frmPrincipal_Load(object sender, EventArgs e)
-        {
-            
-        }
+        
     }
 }

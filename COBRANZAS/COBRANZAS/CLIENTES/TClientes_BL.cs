@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace COBRANZAS.CLIENTES
 {
-    class TCN_Clientes
+    class TClientes_BL
     {
-        TAD_Clientes AD_Clientes = new TAD_Clientes();
+        TClientes_DAL Clientes_DAL = new TClientes_DAL();
         private readonly int  MIN_EDAD = 18;                // Cantidad de minima de años para registrar la fecha nacimiento 
 
 
         public TModelClientes Consultar(String Id) {
             var result = int.TryParse(Id, out int valId);
             if (result)
-                return AD_Clientes.Consultar(valId);
+                return Clientes_DAL.Consultar(valId);
             else
                 return default;
         }
@@ -30,7 +30,7 @@ namespace COBRANZAS.CLIENTES
             if (String.IsNullOrWhiteSpace(prmCliente.Identidad))
                 msj_valid += $"-En necesario que ingrese un numero de identidad \n";
 
-            if (prmCliente.Identidad.Length != 13)
+            if (prmCliente.Identidad.Length != 15)
                 msj_valid += $"-El numero de identidad no es correcto \n";
 
             if (String.IsNullOrWhiteSpace(prmCliente.Nombre))
@@ -57,19 +57,19 @@ namespace COBRANZAS.CLIENTES
 
         public bool Guardar(TModelClientes prmcliente, String prmUsuario)
         {
-            return this.AD_Clientes.Guardar(prmcliente, prmUsuario);
+            return this.Clientes_DAL.Guardar(prmcliente, prmUsuario);
         }
 
         public bool Modificar(TModelClientes prmcliente, String prmUsuario)
         {
-            return this.AD_Clientes.Modificar(prmcliente, prmUsuario);
+            return this.Clientes_DAL.Modificar(prmcliente, prmUsuario);
         }
 
         public bool Anular(String prmIdCliente) {
             bool res = false;
             if (int.TryParse(prmIdCliente, out int valId))
             {
-                res = this.AD_Clientes.Anular(valId);
+                res = this.Clientes_DAL.Anular(valId);
             }
             else {
                 MessageBox.Show("El varlor del Id es invalido!", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -79,7 +79,7 @@ namespace COBRANZAS.CLIENTES
         }
 
         public List<TModelClientes> GetClientes() {
-            return this.AD_Clientes.GetClientes();
+            return this.Clientes_DAL.GetClientes();
         }
 
 

@@ -30,6 +30,17 @@ namespace COBRANZAS.CLIENTES
         private void InitializeComponent()
         {
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.Col_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Identidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Municipio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Fecha_Nacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materialButton4 = new MaterialSkin.Controls.MaterialButton();
             this.lblModificadoPor = new MaterialSkin.Controls.MaterialLabel();
             this.lblFechaModif = new MaterialSkin.Controls.MaterialLabel();
@@ -52,17 +63,6 @@ namespace COBRANZAS.CLIENTES
             this.txtNombre = new MaterialSkin.Controls.MaterialTextBox();
             this.DSFSDFDS = new MaterialSkin.Controls.MaterialLabel();
             this.txtId = new MaterialSkin.Controls.MaterialTextBox();
-            this.dgvClientes = new System.Windows.Forms.DataGridView();
-            this.Col_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_Identidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_Municipio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_Fecha_Nacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.materialCard1.SuspendLayout();
@@ -72,6 +72,7 @@ namespace COBRANZAS.CLIENTES
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.dgvClientes);
             this.materialCard1.Controls.Add(this.materialButton4);
             this.materialCard1.Controls.Add(this.lblModificadoPor);
             this.materialCard1.Controls.Add(this.lblFechaModif);
@@ -94,7 +95,6 @@ namespace COBRANZAS.CLIENTES
             this.materialCard1.Controls.Add(this.txtNombre);
             this.materialCard1.Controls.Add(this.DSFSDFDS);
             this.materialCard1.Controls.Add(this.txtId);
-            this.materialCard1.Controls.Add(this.dgvClientes);
             this.materialCard1.Controls.Add(this.materialLabel1);
             this.materialCard1.Controls.Add(this.materialButton1);
             this.materialCard1.Depth = 0;
@@ -106,6 +106,83 @@ namespace COBRANZAS.CLIENTES
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard1.Size = new System.Drawing.Size(1363, 575);
             this.materialCard1.TabIndex = 0;
+            // 
+            // dgvClientes
+            // 
+            this.dgvClientes.AllowUserToAddRows = false;
+            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Col_Id,
+            this.Col_Identidad,
+            this.Col_Nombre,
+            this.Col_Correo,
+            this.Col_Telefono,
+            this.Col_Direccion,
+            this.Col_Municipio,
+            this.Col_Fecha_Nacimiento,
+            this.Col_Usuario,
+            this.Col_Activo});
+            this.dgvClientes.Location = new System.Drawing.Point(581, 67);
+            this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvClientes.Size = new System.Drawing.Size(765, 411);
+            this.dgvClientes.TabIndex = 27;
+            // 
+            // Col_Id
+            // 
+            this.Col_Id.HeaderText = "Id";
+            this.Col_Id.Name = "Col_Id";
+            this.Col_Id.Width = 50;
+            // 
+            // Col_Identidad
+            // 
+            this.Col_Identidad.HeaderText = "Identidad";
+            this.Col_Identidad.Name = "Col_Identidad";
+            // 
+            // Col_Nombre
+            // 
+            this.Col_Nombre.HeaderText = "Nombre";
+            this.Col_Nombre.Name = "Col_Nombre";
+            this.Col_Nombre.Width = 200;
+            // 
+            // Col_Correo
+            // 
+            this.Col_Correo.HeaderText = "Correo";
+            this.Col_Correo.Name = "Col_Correo";
+            this.Col_Correo.Width = 150;
+            // 
+            // Col_Telefono
+            // 
+            this.Col_Telefono.HeaderText = "Telefono";
+            this.Col_Telefono.Name = "Col_Telefono";
+            this.Col_Telefono.Width = 80;
+            // 
+            // Col_Direccion
+            // 
+            this.Col_Direccion.HeaderText = "Direccion";
+            this.Col_Direccion.Name = "Col_Direccion";
+            this.Col_Direccion.Width = 200;
+            // 
+            // Col_Municipio
+            // 
+            this.Col_Municipio.HeaderText = "Municipio";
+            this.Col_Municipio.Name = "Col_Municipio";
+            // 
+            // Col_Fecha_Nacimiento
+            // 
+            this.Col_Fecha_Nacimiento.HeaderText = "Fecha Nacimiento";
+            this.Col_Fecha_Nacimiento.Name = "Col_Fecha_Nacimiento";
+            this.Col_Fecha_Nacimiento.Width = 80;
+            // 
+            // Col_Usuario
+            // 
+            this.Col_Usuario.HeaderText = "Usuario";
+            this.Col_Usuario.Name = "Col_Usuario";
+            // 
+            // Col_Activo
+            // 
+            this.Col_Activo.HeaderText = "Activo";
+            this.Col_Activo.Name = "Col_Activo";
             // 
             // materialButton4
             // 
@@ -358,7 +435,7 @@ namespace COBRANZAS.CLIENTES
             this.txtIdentidad.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtIdentidad.LeadingIcon = null;
             this.txtIdentidad.Location = new System.Drawing.Point(113, 82);
-            this.txtIdentidad.MaxLength = 13;
+            this.txtIdentidad.MaxLength = 15;
             this.txtIdentidad.MouseState = MaterialSkin.MouseState.OUT;
             this.txtIdentidad.Multiline = false;
             this.txtIdentidad.Name = "txtIdentidad";
@@ -423,96 +500,6 @@ namespace COBRANZAS.CLIENTES
             this.txtId.Text = "";
             this.txtId.TrailingIcon = null;
             // 
-            // dgvClientes
-            // 
-            this.dgvClientes.AllowUserToAddRows = false;
-            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Col_Id,
-            this.Col_Identidad,
-            this.Col_Nombre,
-            this.Col_Correo,
-            this.Col_Telefono,
-            this.Col_Direccion,
-            this.Col_Municipio,
-            this.Col_Fecha_Nacimiento,
-            this.Col_Usuario,
-            this.Col_Activo});
-            this.dgvClientes.Location = new System.Drawing.Point(581, 63);
-            this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.ReadOnly = true;
-            this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientes.Size = new System.Drawing.Size(765, 439);
-            this.dgvClientes.TabIndex = 19;
-            this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
-            this.dgvClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellDoubleClick);
-            // 
-            // Col_Id
-            // 
-            this.Col_Id.HeaderText = "Id";
-            this.Col_Id.Name = "Col_Id";
-            this.Col_Id.ReadOnly = true;
-            this.Col_Id.Width = 50;
-            // 
-            // Col_Identidad
-            // 
-            this.Col_Identidad.HeaderText = "Identidad";
-            this.Col_Identidad.Name = "Col_Identidad";
-            this.Col_Identidad.ReadOnly = true;
-            // 
-            // Col_Nombre
-            // 
-            this.Col_Nombre.HeaderText = "Nombre";
-            this.Col_Nombre.Name = "Col_Nombre";
-            this.Col_Nombre.ReadOnly = true;
-            this.Col_Nombre.Width = 200;
-            // 
-            // Col_Correo
-            // 
-            this.Col_Correo.HeaderText = "Correo";
-            this.Col_Correo.Name = "Col_Correo";
-            this.Col_Correo.ReadOnly = true;
-            this.Col_Correo.Width = 150;
-            // 
-            // Col_Telefono
-            // 
-            this.Col_Telefono.HeaderText = "Telefono";
-            this.Col_Telefono.Name = "Col_Telefono";
-            this.Col_Telefono.ReadOnly = true;
-            this.Col_Telefono.Width = 80;
-            // 
-            // Col_Direccion
-            // 
-            this.Col_Direccion.HeaderText = "Direccion";
-            this.Col_Direccion.Name = "Col_Direccion";
-            this.Col_Direccion.ReadOnly = true;
-            this.Col_Direccion.Width = 200;
-            // 
-            // Col_Municipio
-            // 
-            this.Col_Municipio.HeaderText = "Municipio";
-            this.Col_Municipio.Name = "Col_Municipio";
-            this.Col_Municipio.ReadOnly = true;
-            // 
-            // Col_Fecha_Nacimiento
-            // 
-            this.Col_Fecha_Nacimiento.HeaderText = "Fecha Nacimiento";
-            this.Col_Fecha_Nacimiento.Name = "Col_Fecha_Nacimiento";
-            this.Col_Fecha_Nacimiento.ReadOnly = true;
-            this.Col_Fecha_Nacimiento.Width = 80;
-            // 
-            // Col_Usuario
-            // 
-            this.Col_Usuario.HeaderText = "Usuario";
-            this.Col_Usuario.Name = "Col_Usuario";
-            this.Col_Usuario.ReadOnly = true;
-            // 
-            // Col_Activo
-            // 
-            this.Col_Activo.HeaderText = "Activo";
-            this.Col_Activo.Name = "Col_Activo";
-            this.Col_Activo.ReadOnly = true;
-            // 
             // materialLabel1
             // 
             this.materialLabel1.AutoSize = true;
@@ -571,7 +558,6 @@ namespace COBRANZAS.CLIENTES
         private MaterialSkin.Controls.MaterialCard materialCard1;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialButton materialButton1;
-        private System.Windows.Forms.DataGridView dgvClientes;
         private MaterialSkin.Controls.MaterialTextBox txtId;
         private MaterialSkin.Controls.MaterialTextBox txtNombre;
         private MaterialSkin.Controls.MaterialLabel DSFSDFDS;
@@ -594,6 +580,7 @@ namespace COBRANZAS.CLIENTES
         private MaterialSkin.Controls.MaterialLabel lblModificadoPor;
         private MaterialSkin.Controls.MaterialLabel lblFechaModif;
         private MaterialSkin.Controls.MaterialButton materialButton4;
+        private System.Windows.Forms.DataGridView dgvClientes;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Identidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Nombre;

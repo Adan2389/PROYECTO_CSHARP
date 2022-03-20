@@ -16,7 +16,7 @@ namespace COBRANZAS.CLIENTES
 {
     public partial class frmClientes : MaterialForm
     {
-        TCN_Clientes CN_Clientes = new TCN_Clientes();  // Objeto de la capa de negocio (Clientes) 
+        TClientes_BL Clientes_BL = new TClientes_BL();  // Objeto de la capa de negocio (Clientes) 
         readonly String USUARIO = "sistema";            
                                                           
         private int ACCION;                             // 1-Nuevo,  2-Modificar 3-Anular
@@ -52,7 +52,7 @@ namespace COBRANZAS.CLIENTES
         // Carga la lista de clientes en DataGridView
         private void CargarGrid() {
             dgvClientes.Rows.Clear();
-            List<TModelClientes> clientes = this.CN_Clientes.GetClientes();
+            List<TModelClientes> clientes = this.Clientes_BL.GetClientes();
             foreach( var x in clientes) {
                 dgvClientes.Rows.Add(x.Id, 
                                      x.Identidad, 
@@ -89,7 +89,7 @@ namespace COBRANZAS.CLIENTES
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
-            var cliente =  CN_Clientes.Consultar(txtId.Text);
+            var cliente =  Clientes_BL.Consultar(txtId.Text);
             if (cliente != null){ 
                 txtNombre.Text = cliente.Nombre;
                 txtIdentidad.Text = cliente.Identidad;
@@ -121,15 +121,15 @@ namespace COBRANZAS.CLIENTES
             cliente.FechaNacimiento = dtpFechaNac.Value;
 
             bool  res = false;
-            String msj_valid = this.CN_Clientes.Validar(cliente);
+            String msj_valid = this.Clientes_BL.Validar(cliente);
             if (msj_valid == "")
             {
                 if(this.ACCION == 1)
-                    res =  this.CN_Clientes.Guardar(cliente, this.USUARIO);
+                    res =  this.Clientes_BL.Guardar(cliente, this.USUARIO);
 
                 if (this.ACCION == 2) { 
                     cliente.Id = Convert.ToInt32(txtId.Text);
-                    res = this.CN_Clientes.Modificar(cliente, this.USUARIO);
+                    res = this.Clientes_BL.Modificar(cliente, this.USUARIO);
                 }
                 if (res){ 
                     MessageBox.Show("El cliente se ha guardado con exito", "ACEPTAR", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -178,7 +178,7 @@ namespace COBRANZAS.CLIENTES
         {
             if (!(String.IsNullOrWhiteSpace(txtId.Text)))
             {
-                if (this.CN_Clientes.Anular(txtId.Text))
+                if (this.Clientes_BL.Anular(txtId.Text))
                 {
                     MessageBox.Show("El clientes se ha anulado con exito!", "ACEPTAR", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Limpiar();
