@@ -1,5 +1,6 @@
 ﻿using COBRANZAS.Model;
 using COBRANZAS.Reportes;
+using COBRANZAS.Funciones;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -75,6 +76,12 @@ namespace COBRANZAS.CLIENTES
             objVisorReportes.CODIGO = txtFiltro.Text;
             objVisorReportes.REPORTE = "rptListadoClientes";
             objVisorReportes.ShowDialog();
+        }
+
+        private void materialButton2_Click(object sender, EventArgs e)
+        {
+            TDataGridViewExportExcel objExportar = new TDataGridViewExportExcel(dgvConsulta, this.Font);
+            objExportar.ExporToExcel();
         }
     }
 }

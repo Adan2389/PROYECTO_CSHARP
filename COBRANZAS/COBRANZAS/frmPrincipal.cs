@@ -27,6 +27,7 @@ namespace COBRANZAS
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE);
 
             tabMenuPrincipal.Dock = DockStyle.Fill;
+           
             this.MaximumSize = SystemInformation.PrimaryMonitorMaximizedWindowSize;
         }
 
@@ -38,27 +39,32 @@ namespace COBRANZAS
 
         private void registroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             TabPage miTab = new TabPage();
             miTab.Text = "Registro Clientes";
             frmClientes objClientes = new frmClientes();
-            objClientes.FormBorderStyle = FormBorderStyle.None;
             objClientes.TopLevel = false;
             objClientes.Show();
-            objClientes.BringToFront();
-            tabClientes.Controls.Add(objClientes);
+            miTab.Controls.Add(objClientes);
+            tabOpcionClientes.TabPages.Add(miTab);
+            tabOpcionClientes.SelectedTab = miTab;
+        }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+            //tabOpcionClientes.Dock = DockStyle.Fill;
         }
 
         private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TabPage miTab = new TabPage();
-            miTab.Text = "Consulta Clientes";
+            TabPage miTab2 = new TabPage();
+            miTab2.Text = "Consulta Clientes";
             frmConsultaClientes objConsultaClientes = new frmConsultaClientes();
-            objConsultaClientes.FormBorderStyle = FormBorderStyle.None;
             objConsultaClientes.TopLevel = false;
             objConsultaClientes.Show();
-            tabClientes.Controls.Add(objConsultaClientes);
+            objConsultaClientes.BringToFront();
+            miTab2.Controls.Add(objConsultaClientes);
+            tabOpcionClientes.TabPages.Add(miTab2);
+            tabOpcionClientes.SelectedTab = miTab2;
         }
-        
     }
 }
