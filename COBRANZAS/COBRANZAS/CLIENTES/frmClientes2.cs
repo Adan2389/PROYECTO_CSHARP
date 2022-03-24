@@ -1,7 +1,6 @@
-﻿using MaterialSkin.Controls;
+﻿using COBRANZAS.Model;
+using MaterialSkin.Controls;
 using System;
-using COBRANZAS.Model;
-using COBRANZAS.CLIENTES;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,21 +9,62 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MaterialSkin;
 
 namespace COBRANZAS.CLIENTES
 {
-    public partial class frmClientes : MaterialForm
+    public partial class frmClientes2 : MaterialForm
     {
-        TClientes_BL Clientes_BL = new TClientes_BL();  // Objeto de la capa de negocio (Clientes) 
-        readonly String USUARIO = "sistema";            
-                                                          
-        private int ACCION;                             // 1-Nuevo,  2-Modificar 3-Anular
+        // Objeto de la capa de negocio (Clientes) 
+        TClientes_BL Clientes_BL = new TClientes_BL();  
+        // Usuario que opera el modulo
+        readonly String USUARIO = "sistema";
+        // Controla la accion del form (1-Nuevo, 2-Modificar 3-Anular)
+        private int ACCION;                             
 
-        public frmClientes()
+
+        public frmClientes2()
         {
             InitializeComponent();
-            this.ACCION = 1;
+        }
+
+        // Carga la lista de clientes en DataGridView
+        private void CargarGrid()
+        {
+            dgvClientes.Rows.Clear();
+            List<TModelClientes> clientes = this.Clientes_BL.GetClientes();
+            foreach (var x in clientes)
+            {
+                dgvClientes.Rows.Add(x.Id,
+                                     x.Identidad,
+                                     x.Nombre,
+                                     x.Correo,
+                                     x.Telefono,
+                                     x.Direccion,
+                                     x.Municipio,
+                                     x.FechaNacimiento,
+                                     x.UsuarioCreacion,
+                                     x.Activo);
+            }
+            this.MarcarClientesDesha();
+        }
+
+        // Marca en color rojo los clientes deshabilitados
+        private void MarcarClientesDesha()
+        {
+            int NumFilas = 0;
+            NumFilas = dgvClientes.Rows.Count;
+            if (NumFilas > 0)
+            {
+                for (int i = 0; i < NumFilas; i++)
+                {
+                    String ValActivo = "";
+                    ValActivo = dgvClientes.Rows[i].Cells["Col_Activo"].Value.ToString();
+                    if (ValActivo == "False")
+                    {
+                        dgvClientes.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(235, 107, 107);
+                    }
+                }
+            }
         }
 
         // Limpia los controles del formulario
@@ -49,52 +89,18 @@ namespace COBRANZAS.CLIENTES
             this.CargarGrid();
         }
 
-        // Carga la lista de clientes en DataGridView
-        private void CargarGrid() {
-            dgvClientes.Rows.Clear();
-            List<TModelClientes> clientes = this.Clientes_BL.GetClientes();
-            foreach (var x in clientes)
-            {
-                dgvClientes.Rows.Add(x.Id,
-                                     x.Identidad,
-                                     x.Nombre,
-                                     x.Correo,
-                                     x.Telefono,
-                                     x.Direccion,
-                                     x.Municipio,
-                                     x.FechaNacimiento,
-                                     x.UsuarioCreacion,
-                                     x.Activo);
-            }
-            this.MarcarClientesDesha();
+
+
+        private void frmClientes2_Load(object sender, EventArgs e)
+        {
+            this.CargarGrid();
         }
-
-        // Marca en color rojo los clientes deshabilitados
-        private void MarcarClientesDesha() {
-            int NumFilas = 0;
-            NumFilas = dgvClientes.Rows.Count;
-            if (NumFilas > 0)
-            {
-                for (int i = 0; i < NumFilas; i++)
-                {
-                    String ValActivo = "";
-                    ValActivo = dgvClientes.Rows[i].Cells["Col_Activo"].Value.ToString();
-                    if (ValActivo == "False")
-                    {
-                        dgvClientes.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(235,107,107);   
-                    }
-                }
-            }
-        }
-
-
-
-
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
-            var cliente =  Clientes_BL.Consultar(txtId.Text);
-            if (cliente != null){ 
+            var cliente = Clientes_BL.Consultar(txtId.Text);
+            if (cliente != null)
+            {
                 txtNombre.Text = cliente.Nombre;
                 txtIdentidad.Text = cliente.Identidad;
                 txtCorreo.Text = cliente.Correo;
@@ -124,18 +130,20 @@ namespace COBRANZAS.CLIENTES
             cliente.Municipio = txtMunicipio.Text;
             cliente.FechaNacimiento = dtpFechaNac.Value;
 
-            bool  res = false;
+            bool res = false;
             String msj_valid = this.Clientes_BL.Validar(cliente);
             if (msj_valid == "")
             {
-                if(this.ACCION == 1)
-                    res =  this.Clientes_BL.Guardar(cliente, this.USUARIO);
+                if (this.ACCION == 1)
+                    res = this.Clientes_BL.Guardar(cliente, this.USUARIO);
 
-                if (this.ACCION == 2) { 
+                if (this.ACCION == 2)
+                {
                     cliente.Id = Convert.ToInt32(txtId.Text);
                     res = this.Clientes_BL.Modificar(cliente, this.USUARIO);
                 }
-                if (res){ 
+                if (res)
+                {
                     MessageBox.Show("El cliente se ha guardado con exito", "ACEPTAR", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Limpiar();
                     this.CargarGrid();
@@ -155,16 +163,7 @@ namespace COBRANZAS.CLIENTES
             this.Limpiar();
         }
 
-        private void frmClientes_Load(object sender, EventArgs e)
-        {
-            this.CargarGrid();   
-        }
-
-        private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
-
-        private void dgvClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvClientes_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int NumFila = e.RowIndex;
             txtId.Text = dgvClientes.Rows[NumFila].Cells["Col_Id"].Value.ToString();
@@ -190,10 +189,10 @@ namespace COBRANZAS.CLIENTES
                 else
                     MessageBox.Show("El cliente no se pudo anular!", "ACEPTAR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else {
+            else
+            {
                 MessageBox.Show("Es necesario seleccionar un cliente para anularlo!", "ACEPTAR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-        
     }
 }

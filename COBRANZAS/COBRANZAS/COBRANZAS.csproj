@@ -81,6 +81,12 @@
     <Compile Include="CLIENTES\frmClientes.Designer.cs">
       <DependentUpon>frmClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="CLIENTES\frmClientes2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CLIENTES\frmClientes2.Designer.cs">
+      <DependentUpon>frmClientes2.cs</DependentUpon>
+    </Compile>
     <Compile Include="CLIENTES\frmConsultaClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,9 @@
     </Compile>
     <EmbeddedResource Include="CLIENTES\frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CLIENTES\frmClientes2.resx">
+      <DependentUpon>frmClientes2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CLIENTES\frmConsultaClientes.resx">
       <DependentUpon>frmConsultaClientes.cs</DependentUpon>

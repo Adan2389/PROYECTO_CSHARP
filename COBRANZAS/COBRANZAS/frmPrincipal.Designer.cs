@@ -32,7 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.tabMenuPrincipal = new MaterialSkin.Controls.MaterialTabControl();
             this.tabClientes = new System.Windows.Forms.TabPage();
+            this.tabSelectoCliente = new MaterialSkin.Controls.MaterialTabSelector();
             this.tabOpcionClientes = new MaterialSkin.Controls.MaterialTabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabServicios = new System.Windows.Forms.TabPage();
             this.tabSelectorServicios = new MaterialSkin.Controls.MaterialTabSelector();
             this.tabOpcionServicios = new MaterialSkin.Controls.MaterialTabControl();
@@ -40,14 +42,17 @@
             this.tabMorisidad = new System.Windows.Forms.TabPage();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.tabOpcionMorosidad = new MaterialSkin.Controls.MaterialTabControl();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabConfiguraciones = new System.Windows.Forms.TabPage();
             this.materialTabSelector2 = new MaterialSkin.Controls.MaterialTabSelector();
             this.tabOpcionConfiguraciones = new MaterialSkin.Controls.MaterialTabControl();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.listaImagenes = new System.Windows.Forms.ImageList(this.components);
             this.menuPrincipal = new System.Windows.Forms.MenuStrip();
             this.menuClientes = new System.Windows.Forms.ToolStripMenuItem();
             this.registroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarV2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuServicios = new System.Windows.Forms.ToolStripMenuItem();
             this.registroToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,9 +66,9 @@
             this.accesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moduloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.parametrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.temaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.oscuroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabMenuPrincipal.SuspendLayout();
             this.tabClientes.SuspendLayout();
             this.tabOpcionClientes.SuspendLayout();
@@ -95,6 +100,7 @@
             // 
             // tabClientes
             // 
+            this.tabClientes.Controls.Add(this.tabSelectoCliente);
             this.tabClientes.Controls.Add(this.tabOpcionClientes);
             this.tabClientes.ImageKey = "User.png";
             this.tabClientes.Location = new System.Drawing.Point(4, 23);
@@ -105,6 +111,20 @@
             this.tabClientes.Text = "Clientes";
             this.tabClientes.UseVisualStyleBackColor = true;
             // 
+            // tabSelectoCliente
+            // 
+            this.tabSelectoCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabSelectoCliente.BaseTabControl = this.tabOpcionClientes;
+            this.tabSelectoCliente.Depth = 0;
+            this.tabSelectoCliente.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tabSelectoCliente.Location = new System.Drawing.Point(30, 10);
+            this.tabSelectoCliente.MouseState = MaterialSkin.MouseState.HOVER;
+            this.tabSelectoCliente.Name = "tabSelectoCliente";
+            this.tabSelectoCliente.Size = new System.Drawing.Size(1098, 35);
+            this.tabSelectoCliente.TabIndex = 1;
+            this.tabSelectoCliente.Text = "materialTabSelector3";
+            // 
             // tabOpcionClientes
             // 
             this.tabOpcionClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -112,13 +132,22 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabOpcionClientes.Controls.Add(this.tabPage1);
             this.tabOpcionClientes.Depth = 0;
-            this.tabOpcionClientes.Location = new System.Drawing.Point(39, 31);
+            this.tabOpcionClientes.Location = new System.Drawing.Point(30, 49);
             this.tabOpcionClientes.MouseState = MaterialSkin.MouseState.HOVER;
             this.tabOpcionClientes.Multiline = true;
             this.tabOpcionClientes.Name = "tabOpcionClientes";
             this.tabOpcionClientes.SelectedIndex = 0;
-            this.tabOpcionClientes.Size = new System.Drawing.Size(1102, 462);
+            this.tabOpcionClientes.Size = new System.Drawing.Size(1102, 451);
             this.tabOpcionClientes.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.Color.LightGray;
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(1094, 425);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Inicio";
             // 
             // tabServicios
             // 
@@ -213,6 +242,15 @@
             this.tabOpcionMorosidad.Size = new System.Drawing.Size(847, 341);
             this.tabOpcionMorosidad.TabIndex = 4;
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Size = new System.Drawing.Size(839, 315);
+            this.tabPage2.TabIndex = 0;
+            this.tabPage2.Text = "Inicio";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // tabConfiguraciones
             // 
             this.tabConfiguraciones.Controls.Add(this.materialTabSelector2);
@@ -255,6 +293,15 @@
             this.tabOpcionConfiguraciones.Size = new System.Drawing.Size(917, 342);
             this.tabOpcionConfiguraciones.TabIndex = 6;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 23);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(909, 315);
+            this.tabPage3.TabIndex = 0;
+            this.tabPage3.Text = "Inicio";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
             // listaImagenes
             // 
             this.listaImagenes.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("listaImagenes.ImageStream")));
@@ -271,7 +318,8 @@
             this.menuClientes,
             this.menuServicios,
             this.menuMorosidad,
-            this.menuConfiguracion});
+            this.menuConfiguracion,
+            this.temaToolStripMenuItem});
             this.menuPrincipal.Location = new System.Drawing.Point(3, 64);
             this.menuPrincipal.Name = "menuPrincipal";
             this.menuPrincipal.Size = new System.Drawing.Size(1190, 24);
@@ -282,7 +330,8 @@
             // 
             this.menuClientes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registroToolStripMenuItem,
-            this.consultaToolStripMenuItem});
+            this.consultaToolStripMenuItem,
+            this.registrarV2ToolStripMenuItem});
             this.menuClientes.Name = "menuClientes";
             this.menuClientes.Size = new System.Drawing.Size(61, 20);
             this.menuClientes.Text = "Clientes";
@@ -290,16 +339,23 @@
             // registroToolStripMenuItem
             // 
             this.registroToolStripMenuItem.Name = "registroToolStripMenuItem";
-            this.registroToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.registroToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.registroToolStripMenuItem.Text = "Registro";
             this.registroToolStripMenuItem.Click += new System.EventHandler(this.registroToolStripMenuItem_Click);
             // 
             // consultaToolStripMenuItem
             // 
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
-            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.consultaToolStripMenuItem.Text = "Consulta";
             this.consultaToolStripMenuItem.Click += new System.EventHandler(this.consultaToolStripMenuItem_Click);
+            // 
+            // registrarV2ToolStripMenuItem
+            // 
+            this.registrarV2ToolStripMenuItem.Name = "registrarV2ToolStripMenuItem";
+            this.registrarV2ToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.registrarV2ToolStripMenuItem.Text = "Registrar v2";
+            this.registrarV2ToolStripMenuItem.Click += new System.EventHandler(this.registrarV2ToolStripMenuItem_Click);
             // 
             // menuServicios
             // 
@@ -392,32 +448,28 @@
             this.parametrosToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.parametrosToolStripMenuItem.Text = "Parametros";
             // 
-            // tabPage1
+            // temaToolStripMenuItem
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.LightGray;
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1094, 436);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.temaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lightToolStripMenuItem,
+            this.oscuroToolStripMenuItem});
+            this.temaToolStripMenuItem.Name = "temaToolStripMenuItem";
+            this.temaToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.temaToolStripMenuItem.Text = "Tema";
             // 
-            // tabPage2
+            // lightToolStripMenuItem
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(839, 315);
-            this.tabPage2.TabIndex = 0;
-            this.tabPage2.Text = "Inicio";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.lightToolStripMenuItem.Name = "lightToolStripMenuItem";
+            this.lightToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lightToolStripMenuItem.Text = "Claro";
+            this.lightToolStripMenuItem.Click += new System.EventHandler(this.lightToolStripMenuItem_Click);
             // 
-            // tabPage3
+            // oscuroToolStripMenuItem
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 23);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(909, 315);
-            this.tabPage3.TabIndex = 0;
-            this.tabPage3.Text = "Inicio";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.oscuroToolStripMenuItem.Name = "oscuroToolStripMenuItem";
+            this.oscuroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.oscuroToolStripMenuItem.Text = "Oscuro";
+            this.oscuroToolStripMenuItem.Click += new System.EventHandler(this.oscuroToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -487,5 +539,10 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
+        private MaterialSkin.Controls.MaterialTabSelector tabSelectoCliente;
+        private System.Windows.Forms.ToolStripMenuItem registrarV2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem temaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lightToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem oscuroToolStripMenuItem;
     }
 }

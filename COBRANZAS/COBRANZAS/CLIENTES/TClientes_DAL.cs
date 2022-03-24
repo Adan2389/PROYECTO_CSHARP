@@ -11,9 +11,12 @@ namespace COBRANZAS.CLIENTES
 {
     public class TClientes_DAL
     {
+        // Para acceder a los parametros de la conexion
         TParamSql objParamSql = new TParamSql();
+        // Para manejar un cliente a traves del modelo
         TModelClientes cliente = new TModelClientes();
-        List<TModelClientes> lstClientes = new List<TModelClientes>();
+        // Para manejar Lista de clientes
+        List<TModelClientes> lstClientes = new List<TModelClientes>();    
 
         public TClientes_DAL() { 
         
@@ -162,6 +165,7 @@ namespace COBRANZAS.CLIENTES
             return false;
         }
 
+        // Marca como anulado un registro de cliente
         public bool Anular(int IdCliente )
         {
             bool ValResul = false;

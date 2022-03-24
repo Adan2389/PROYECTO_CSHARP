@@ -25,6 +25,7 @@ namespace COBRANZAS.Funciones
             Font = vFont;
         }
 
+        // Exporta a Excel el contenido de un DataGridView
         public void ExporToExcel()
         {
             Microsoft.Office.Interop.Excel.Application xlexcel;

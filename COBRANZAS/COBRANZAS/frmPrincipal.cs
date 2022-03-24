@@ -17,17 +17,18 @@ namespace COBRANZAS
 {
     public partial class frmPrincipal : MaterialForm
     {
+        // Para Configurar el skin de la parte visual 
+        MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+
+        // Confurando el skin
         public frmPrincipal()
         {
             InitializeComponent();
-            var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            materialSkinManager.EnforceBackcolorOnAllComponents = true;
+            materialSkinManager.EnforceBackcolorOnAllComponents = false;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE);
-
             tabMenuPrincipal.Dock = DockStyle.Fill;
-           
             this.MaximumSize = SystemInformation.PrimaryMonitorMaximizedWindowSize;
         }
 
@@ -60,11 +61,35 @@ namespace COBRANZAS
             miTab2.Text = "Consulta Clientes";
             frmConsultaClientes objConsultaClientes = new frmConsultaClientes();
             objConsultaClientes.TopLevel = false;
+            objConsultaClientes.Location = new Point(0, tabSelectoCliente.Location.Y + 5);
             objConsultaClientes.Show();
             objConsultaClientes.BringToFront();
             miTab2.Controls.Add(objConsultaClientes);
             tabOpcionClientes.TabPages.Add(miTab2);
             tabOpcionClientes.SelectedTab = miTab2;
+        }
+
+        private void registrarV2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TabPage miTab = new TabPage();
+            miTab.Text = "Registro Clientes 2";
+            frmClientes2 objClientes = new frmClientes2();
+            objClientes.TopLevel = false;
+            objClientes.Location = new Point(0, tabSelectoCliente.Location.Y + 5);
+            objClientes.Show();
+            miTab.Controls.Add(objClientes);
+            tabOpcionClientes.TabPages.Add(miTab);
+            tabOpcionClientes.SelectedTab = miTab;
+        }
+
+        private void lightToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+        }
+
+        private void oscuroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
         }
     }
 }

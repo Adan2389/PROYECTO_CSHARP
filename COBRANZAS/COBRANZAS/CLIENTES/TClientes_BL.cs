@@ -12,10 +12,12 @@ namespace COBRANZAS.CLIENTES
 {
     class TClientes_BL
     {
+        // Para utilizar la capa DAL Clientes
         TClientes_DAL Clientes_DAL = new TClientes_DAL();
-        private readonly int  MIN_EDAD = 18;                // Cantidad de minima de años para registrar la fecha nacimiento 
+        // Cantidad de minima de años para registrar la fecha nacimiento 
+        private readonly int  MIN_EDAD = 18;                
 
-
+        // Consulta un clientes por ID
         public TModelClientes Consultar(String Id) {
             var result = int.TryParse(Id, out int valId);
             if (result)
@@ -24,6 +26,7 @@ namespace COBRANZAS.CLIENTES
                 return default;
         }
 
+        // Valida los datos del cliente
         public String Validar(TModelClientes prmCliente) {
             String msj_valid = "";
 
@@ -55,16 +58,19 @@ namespace COBRANZAS.CLIENTES
             return msj_valid;
         }
 
+        // Guarda los datos de un cliente
         public bool Guardar(TModelClientes prmcliente, String prmUsuario)
         {
             return this.Clientes_DAL.Guardar(prmcliente, prmUsuario);
         }
 
+        // Modifica los datos de un cliente
         public bool Modificar(TModelClientes prmcliente, String prmUsuario)
         {
             return this.Clientes_DAL.Modificar(prmcliente, prmUsuario);
         }
 
+        // Anula un cliente
         public bool Anular(String prmIdCliente) {
             bool res = false;
             if (int.TryParse(prmIdCliente, out int valId))
@@ -78,6 +84,7 @@ namespace COBRANZAS.CLIENTES
             return res;
         }
 
+        // Devuelve la lista de clientes
         public List<TModelClientes> GetClientes() {
             return this.Clientes_DAL.GetClientes();
         }

@@ -29,6 +29,7 @@ namespace COBRANZAS.CLIENTES
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvConsulta = new System.Windows.Forms.DataGridView();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
@@ -45,8 +46,12 @@ namespace COBRANZAS.CLIENTES
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvConsulta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvConsulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvConsulta.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvConsulta.Location = new System.Drawing.Point(29, 156);
             this.dgvConsulta.Name = "dgvConsulta";
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            this.dgvConsulta.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvConsulta.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.GrayText;
             this.dgvConsulta.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvConsulta.Size = new System.Drawing.Size(1130, 509);
             this.dgvConsulta.TabIndex = 0;
