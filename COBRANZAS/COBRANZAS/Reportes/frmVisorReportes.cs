@@ -6,8 +6,11 @@ namespace COBRANZAS.Reportes
 {
     public partial class frmVisorReportes : Form
     {
+        // Obtiene los parametros de la conexion DB
         TParamSql objParamSql = new TParamSql();
+        // Codigo utilizado para paso de paratro a los reportes
         public String CODIGO = "";
+        // El nombre del reporte a mostrar/imprimir
         public string REPORTE = "";
 
         public frmVisorReportes()
@@ -15,7 +18,8 @@ namespace COBRANZAS.Reportes
             InitializeComponent();
         }
 
-        private void MostarReporte() {
+        // Muestra el reporte de crstal en formulario
+        private void mostarReporte() {
 
             if (this.REPORTE == "rptListadoClientes") {
                 rptListadoClientes reporte = new rptListadoClientes();
@@ -26,9 +30,10 @@ namespace COBRANZAS.Reportes
             }
         }
 
+
         private void frmVisorReportes_Load(object sender, EventArgs e)
         {
-            this.MostarReporte();
+            this.mostarReporte();
         }
     }
 }

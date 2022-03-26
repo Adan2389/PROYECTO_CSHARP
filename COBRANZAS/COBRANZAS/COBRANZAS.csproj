@@ -179,9 +179,7 @@
     <Folder Include="Correo\" />
     <Folder Include="Disenio\ico\" />
     <Folder Include="Disenio\jpg\" />
-    <Folder Include="iconos\" />
     <Folder Include="MOROSIDAD\" />
-    <Folder Include="Public\" />
     <Folder Include="Seguridad\" />
     <Folder Include="SERVICIOS\" />
   </ItemGroup>

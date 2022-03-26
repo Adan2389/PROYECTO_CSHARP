@@ -16,10 +16,13 @@ namespace COBRANZAS.CLIENTES
 {
     public partial class frmClientes : MaterialForm
     {
-        TClientes_BL Clientes_BL = new TClientes_BL();  // Objeto de la capa de negocio (Clientes) 
-        readonly String USUARIO = "sistema";            
-                                                          
-        private int ACCION;                             // 1-Nuevo,  2-Modificar 3-Anular
+        // Objeto de la capa de negocio (Clientes) 
+        TClientes_BL clientes_BL = new TClientes_BL();  
+        
+        // Usuario que opera el modulo
+        readonly String USUARIO = "sistema";
+        // 1-Nuevo,  2-Modificar 3-Anular
+        private int ACCION;                             
 
         public frmClientes()
         {
@@ -28,7 +31,7 @@ namespace COBRANZAS.CLIENTES
         }
 
         // Limpia los controles del formulario
-        private void Limpiar()
+        private void limpiar()
         {
             txtId.Text = "";
             dtpFechaNac.Value = DateTime.Now;
@@ -46,13 +49,13 @@ namespace COBRANZAS.CLIENTES
             txtTelefono.Text = "";
             this.ACCION = 1;
             txtId.Enabled = true;
-            this.CargarGrid();
+            this.cargarGrid();
         }
 
         // Carga la lista de clientes en DataGridView
-        private void CargarGrid() {
+        private void cargarGrid() {
             dgvClientes.Rows.Clear();
-            List<TModelClientes> clientes = this.Clientes_BL.GetClientes();
+            List<TModelClientes> clientes = this.clientes_BL.getClientes();
             foreach (var x in clientes)
             {
                 dgvClientes.Rows.Add(x.Id,
@@ -66,11 +69,11 @@ namespace COBRANZAS.CLIENTES
                                      x.UsuarioCreacion,
                                      x.Activo);
             }
-            this.MarcarClientesDesha();
+            this.marcarClientesDesha();
         }
 
         // Marca en color rojo los clientes deshabilitados
-        private void MarcarClientesDesha() {
+        private void marcarClientesDesha() {
             int NumFilas = 0;
             NumFilas = dgvClientes.Rows.Count;
             if (NumFilas > 0)
@@ -90,10 +93,9 @@ namespace COBRANZAS.CLIENTES
 
 
 
-
         private void materialButton1_Click(object sender, EventArgs e)
         {
-            var cliente =  Clientes_BL.Consultar(txtId.Text);
+            var cliente =  clientes_BL.consultar(txtId.Text);
             if (cliente != null){ 
                 txtNombre.Text = cliente.Nombre;
                 txtIdentidad.Text = cliente.Identidad;
@@ -125,20 +127,20 @@ namespace COBRANZAS.CLIENTES
             cliente.FechaNacimiento = dtpFechaNac.Value;
 
             bool  res = false;
-            String msj_valid = this.Clientes_BL.Validar(cliente);
+            String msj_valid = this.clientes_BL.validar(cliente);
             if (msj_valid == "")
             {
                 if(this.ACCION == 1)
-                    res =  this.Clientes_BL.Guardar(cliente, this.USUARIO);
+                    res =  this.clientes_BL.guardar(cliente, this.USUARIO);
 
                 if (this.ACCION == 2) { 
                     cliente.Id = Convert.ToInt32(txtId.Text);
-                    res = this.Clientes_BL.Modificar(cliente, this.USUARIO);
+                    res = this.clientes_BL.modificar(cliente, this.USUARIO);
                 }
                 if (res){ 
                     MessageBox.Show("El cliente se ha guardado con exito", "ACEPTAR", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Limpiar();
-                    this.CargarGrid();
+                    limpiar();
+                    this.cargarGrid();
                 }
                 else
                     MessageBox.Show("El cliente no se ha podido guardar", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -152,12 +154,12 @@ namespace COBRANZAS.CLIENTES
 
         private void materialButton3_Click(object sender, EventArgs e)
         {
-            this.Limpiar();
+            this.limpiar();
         }
 
         private void frmClientes_Load(object sender, EventArgs e)
         {
-            this.CargarGrid();   
+            this.cargarGrid();   
         }
 
         private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -182,10 +184,10 @@ namespace COBRANZAS.CLIENTES
         {
             if (!(String.IsNullOrWhiteSpace(txtId.Text)))
             {
-                if (this.Clientes_BL.Anular(txtId.Text))
+                if (this.clientes_BL.anular(txtId.Text))
                 {
                     MessageBox.Show("El clientes se ha anulado con exito!", "ACEPTAR", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Limpiar();
+                    this.limpiar();
                 }
                 else
                     MessageBox.Show("El cliente no se pudo anular!", "ACEPTAR", MessageBoxButtons.OK, MessageBoxIcon.Warning);

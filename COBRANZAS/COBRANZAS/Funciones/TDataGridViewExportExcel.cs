@@ -11,10 +11,13 @@ namespace COBRANZAS.Funciones
 {
     class TDataGridViewExportExcel
     {
-        public Color HeaderColor = Color.Empty;
-        public List<String> ColumnsHide = new List<String>();
-
-        System.Drawing.Font Font;
+        // Color del la cabecera del grid
+        public Color headerColor = Color.Empty;
+        // Lista de columnas configuradas para ocultarse
+        public List<String> columnsHide = new List<String>();
+        // Fuente aplicada para migrar a excel
+        System.Drawing.Font font;
+        // DataGridView que sera exportado a excel
         DataGridView dgv;
 
 
@@ -22,11 +25,11 @@ namespace COBRANZAS.Funciones
         public TDataGridViewExportExcel(DataGridView vDgv, System.Drawing.Font vFont)
         {
             dgv = vDgv;
-            Font = vFont;
+            font = vFont;
         }
 
         // Exporta a Excel el contenido de un DataGridView
-        public void ExporToExcel()
+        public void exporToExcel()
         {
             Microsoft.Office.Interop.Excel.Application xlexcel;
             Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
@@ -34,7 +37,7 @@ namespace COBRANZAS.Funciones
 
             object oldValue = System.Reflection.Missing.Value;
 
-            Clipboard.SetText(ConvertDataGridViewToHTMLWithFormatting());
+            Clipboard.SetText(convertDataGridViewToHTMLWithFormatting());
 
             object misValue = System.Reflection.Missing.Value;
             xlexcel = new Microsoft.Office.Interop.Excel.Application();
@@ -56,7 +59,7 @@ namespace COBRANZAS.Funciones
             Clipboard.SetDataObject(oldValue);
         }
 
-        public string ConvertDataGridViewToHTMLWithFormatting()
+        public string convertDataGridViewToHTMLWithFormatting()
         {
             StringBuilder sb = new StringBuilder();
 
@@ -67,10 +70,10 @@ namespace COBRANZAS.Funciones
             //create table header
             foreach (DataGridViewColumn vCol in dgv.Columns)
             {
-                if (vCol.Visible == true && !ColumnsHide.Contains(vCol.Name))
+                if (vCol.Visible == true && !columnsHide.Contains(vCol.Name))
                 {
-                    sb.Append(DGVHeaderCellToHTMLWithFormatting(vCol));
-                    sb.Append(DGVCellFontAndValueToHTML(vCol.HeaderText, vCol.HeaderCell.Style.Font));
+                    sb.Append(dgvHeaderCellToHTMLWithFormatting(vCol));
+                    sb.Append(dgvCellFontAndValueToHTML(vCol.HeaderText, vCol.HeaderCell.Style.Font));
                     sb.AppendLine("</td>");
                 }
             }
@@ -85,11 +88,11 @@ namespace COBRANZAS.Funciones
                 foreach (DataGridViewCell vCell in vRow.Cells)
                 {
 
-                    if (dgv.Columns[vCell.ColumnIndex].Visible == true && !ColumnsHide.Contains(dgv.Columns[vCell.ColumnIndex].Name))
+                    if (dgv.Columns[vCell.ColumnIndex].Visible == true && !columnsHide.Contains(dgv.Columns[vCell.ColumnIndex].Name))
                     {
-                        sb.AppendLine(DGVCellToHTMLWithFormatting(vCell));
+                        sb.AppendLine(dgvCellToHTMLWithFormatting(vCell));
                         string cellValue = vCell.Value == null ? string.Empty : vCell.Value.ToString();
-                        sb.AppendLine(DGVCellFontAndValueToHTML(cellValue, vCell.Style.Font));
+                        sb.AppendLine(dgvCellFontAndValueToHTML(cellValue, vCell.Style.Font));
                         sb.AppendLine("</td>");
                     }
                 }
@@ -100,23 +103,22 @@ namespace COBRANZAS.Funciones
             return sb.ToString();
         }
 
-        //TODO: Add more cell styles described here:
-        private string DGVHeaderCellToHTMLWithFormatting(DataGridViewColumn pCol)
+        private string dgvHeaderCellToHTMLWithFormatting(DataGridViewColumn pCol)
         {
             StringBuilder sb = new StringBuilder();
 
             sb.Append("<td style=\" ");
-            Color vBc = this.HeaderColor != Color.Empty ? this.HeaderColor : pCol.HeaderCell.InheritedStyle.BackColor;
+            Color vBc = this.headerColor != Color.Empty ? this.headerColor : pCol.HeaderCell.InheritedStyle.BackColor;
             Color vFc = pCol.HeaderCell.InheritedStyle.ForeColor;
 
-            sb.Append(DGVCellColorToHTML(vFc, vBc));
-            sb.Append(DGVCellAlignmentToHTML(pCol.HeaderCell.Style.Alignment));
+            sb.Append(dgvCellColorToHTML(vFc, vBc));
+            sb.Append(dgvCellAlignmentToHTML(pCol.HeaderCell.Style.Alignment));
             sb.Append(" \" >");
 
             return sb.ToString();
         }
 
-        private string DGVCellToHTMLWithFormatting(DataGridViewCell pCell)
+        private string dgvCellToHTMLWithFormatting(DataGridViewCell pCell)
         {
             StringBuilder sb = new StringBuilder();
 
@@ -126,15 +128,15 @@ namespace COBRANZAS.Funciones
 
 
             sb.Append("<td style=\" ");
-            sb.Append(DGVCellFormatTypeToHTML(pCell));
-            sb.Append(DGVCellColorToHTML(vFc, vBc));
-            sb.Append(DGVCellAlignmentToHTML(pCell.Style.Alignment));
+            sb.Append(dgvCellFormatTypeToHTML(pCell));
+            sb.Append(dgvCellColorToHTML(vFc, vBc));
+            sb.Append(dgvCellAlignmentToHTML(pCell.Style.Alignment));
             sb.Append(" \" >");
 
             return sb.ToString();
         }
 
-        private string DGVCellFormatTypeToHTML(DataGridViewCell pCell)
+        private string dgvCellFormatTypeToHTML(DataGridViewCell pCell)
         {
 
             if (pCell.Value == null)
@@ -162,7 +164,7 @@ namespace COBRANZAS.Funciones
             return scopy;
         }
 
-        private string DGVCellColorToHTML(Color pForeColor, Color pBackColor)
+        private string dgvCellColorToHTML(Color pForeColor, Color pBackColor)
         {
             if (pForeColor.Name == "0" && pBackColor.Name == "0") return string.Empty;
 
@@ -190,10 +192,10 @@ namespace COBRANZAS.Funciones
             return sb.ToString();
         }
 
-        private string DGVCellFontAndValueToHTML(string pValue, System.Drawing.Font pFont)
+        private string dgvCellFontAndValueToHTML(string pValue, System.Drawing.Font pFont)
         {
             //If no font has been set then assume its the default as someone would be expected in HTML or Excel
-            if (pFont == null || pFont == this.Font && !(pFont.Bold | pFont.Italic | pFont.Underline | pFont.Strikeout)) return pValue;
+            if (pFont == null || pFont == this.font && !(pFont.Bold | pFont.Italic | pFont.Underline | pFont.Strikeout)) return pValue;
             StringBuilder sb = new StringBuilder();
             sb.Append(" ");
             if (pFont.Bold) sb.Append("<b>");
@@ -204,10 +206,10 @@ namespace COBRANZAS.Funciones
             if (pFont.Underline) sb.Append("<u>");
 
             string size = string.Empty;
-            if (pFont.Size != this.Font.Size) size = "font-size: " + pFont.Size + "pt;";
+            if (pFont.Size != this.font.Size) size = "font-size: " + pFont.Size + "pt;";
 
             //The <font> tag is not supported in HTML5. Use CSS or a span instead. 
-            if (pFont.FontFamily.Name != this.Font.Name)
+            if (pFont.FontFamily.Name != this.font.Name)
             {
                 sb.Append("<span style=\"font-family: ");
                 sb.Append(pFont.FontFamily.Name);
@@ -216,7 +218,7 @@ namespace COBRANZAS.Funciones
                 sb.Append("\">");
             }
             sb.Append(pValue);
-            if (pFont.FontFamily.Name != this.Font.Name) sb.Append("</span>");
+            if (pFont.FontFamily.Name != this.font.Name) sb.Append("</span>");
 
             if (pFont.Underline) sb.Append("</u>");
             if (pFont.Strikeout) sb.Append("</strike>");
@@ -226,13 +228,13 @@ namespace COBRANZAS.Funciones
             return sb.ToString();
         }
 
-        private string DGVCellAlignmentToHTML(DataGridViewContentAlignment pAlign)
+        private string dgvCellAlignmentToHTML(DataGridViewContentAlignment pAlign)
         {
             if (pAlign == DataGridViewContentAlignment.NotSet) return string.Empty;
 
             string horizontalAlignment = string.Empty;
             string verticalAlignment = string.Empty;
-            CellAlignment(pAlign, ref horizontalAlignment, ref verticalAlignment);
+            cellAlignment(pAlign, ref horizontalAlignment, ref verticalAlignment);
             StringBuilder sb = new StringBuilder();
             sb.Append(" align='");
             sb.Append(horizontalAlignment);
@@ -242,7 +244,7 @@ namespace COBRANZAS.Funciones
             return sb.ToString();
         }
 
-        private void CellAlignment(DataGridViewContentAlignment pAlign, ref string horizontalAlignment, ref string verticalAlignment)
+        private void cellAlignment(DataGridViewContentAlignment pAlign, ref string horizontalAlignment, ref string verticalAlignment)
         {
             switch (pAlign)
             {

@@ -23,7 +23,7 @@ namespace COBRANZAS.CLIENTES
         }
 
         // Consulta la informacion de 1 cliente
-        public TModelClientes Consultar(int Id) {
+        public TModelClientes consultar(int Id) {
             DataTable dtClientes = new DataTable();
             TModelClientes Xcliente = new TModelClientes();
             using (SqlConnection con = new SqlConnection(objParamSql.getStringCon())) {
@@ -64,7 +64,7 @@ namespace COBRANZAS.CLIENTES
         }
 
         // Devulve la lista clientes
-        public List<TModelClientes> GetClientes() {
+        public List<TModelClientes> getClientes() {
             List<TModelClientes> Clientes = new List<TModelClientes>();
             using (SqlConnection con = new SqlConnection(objParamSql.getStringCon()))
             {
@@ -101,7 +101,7 @@ namespace COBRANZAS.CLIENTES
         }
       
         // Guarda un nuevo registro de 1 cliente
-        public bool Guardar(TModelClientes prmCliente, String prmUsuario) {
+        public bool guardar(TModelClientes prmCliente, String prmUsuario) {
             bool ValResul = false;
             using ( SqlConnection con = new SqlConnection(objParamSql.getStringCon())) {
                 try
@@ -131,7 +131,7 @@ namespace COBRANZAS.CLIENTES
         }
 
         // Modifica los datos de un clientes
-        public bool Modificar(TModelClientes prmCliente, String prmUsuario)
+        public bool modificar(TModelClientes prmCliente, String prmUsuario)
         {
             bool ValResul = false;
             using (SqlConnection con = new SqlConnection(objParamSql.getStringCon()))
@@ -166,7 +166,7 @@ namespace COBRANZAS.CLIENTES
         }
 
         // Marca como anulado un registro de cliente
-        public bool Anular(int IdCliente )
+        public bool anular(int IdCliente )
         {
             bool ValResul = false;
             using (SqlConnection con = new SqlConnection(objParamSql.getStringCon()))

@@ -17,20 +17,20 @@ namespace COBRANZAS.CLIENTES
 {
     public partial class frmConsultaClientes : MaterialForm
     {
-        TClientes_BL Clientes_BL = new TClientes_BL();
-        DataView DatosView = new DataView();
-
+        // Para el manejo de la capa de negocio (Clientes)
+        TClientes_BL clientes_BL = new TClientes_BL();
+        // Para crear vistas datos en el datagrid y los filtros de busqueda
+        DataView datosView = new DataView();
 
         public frmConsultaClientes()
         {
             InitializeComponent();
         }
 
-
         // Carga el listado de clientes en Grid.
-        private void CargarGrid() {
+        private void cargarGrid() {
             dgvConsulta.Rows.Clear();
-            List<TModelClientes> clientes = this.Clientes_BL.GetClientes();
+            List<TModelClientes> clientes = this.clientes_BL.getClientes();
 
             DataTable dt = new DataTable();
             dt.Columns.Add("Identidad");
@@ -44,8 +44,8 @@ namespace COBRANZAS.CLIENTES
             foreach (var c in clientes)
                 dt.Rows.Add(c.Identidad, c.Nombre, c.Direccion, c.Telefono, c.Correo, c.FechaNacimiento, c.Activo);
 
-            DatosView = dt.DefaultView;
-            dgvConsulta.DataSource = DatosView;
+            datosView = dt.DefaultView;
+            dgvConsulta.DataSource = datosView;
         }
 
 
@@ -53,7 +53,7 @@ namespace COBRANZAS.CLIENTES
 
         private void frmConsultaClientes_Load(object sender, EventArgs e)
         {
-            this.CargarGrid();
+            this.cargarGrid();
         }
 
         private void materialButton3_Click(object sender, EventArgs e)
@@ -63,7 +63,7 @@ namespace COBRANZAS.CLIENTES
 
         private void txtNombre_KeyUp(object sender, KeyEventArgs e)
         {
-            DatosView.RowFilter = $"Correo like '%{txtFiltro.Text}%' or  Direccion like '%{txtFiltro.Text}%' or  Nombre like '%{txtFiltro.Text}%' or  Identidad like '%{txtFiltro.Text}%' ";
+            datosView.RowFilter = $"Correo like '%{txtFiltro.Text}%' or  Direccion like '%{txtFiltro.Text}%' or  Nombre like '%{txtFiltro.Text}%' or  Identidad like '%{txtFiltro.Text}%' ";
         }
 
         private void TxtIdentidad_KeyUp(object sender, KeyEventArgs e)
@@ -81,7 +81,7 @@ namespace COBRANZAS.CLIENTES
         private void materialButton2_Click(object sender, EventArgs e)
         {
             TDataGridViewExportExcel objExportar = new TDataGridViewExportExcel(dgvConsulta, this.Font);
-            objExportar.ExporToExcel();
+            objExportar.exporToExcel();
         }
     }
 }

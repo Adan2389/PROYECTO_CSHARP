@@ -13,21 +13,21 @@ namespace COBRANZAS.CLIENTES
     class TClientes_BL
     {
         // Para utilizar la capa DAL Clientes
-        TClientes_DAL Clientes_DAL = new TClientes_DAL();
+        TClientes_DAL clientes_DAL = new TClientes_DAL();
         // Cantidad de minima de años para registrar la fecha nacimiento 
         private readonly int  MIN_EDAD = 18;                
 
         // Consulta un clientes por ID
-        public TModelClientes Consultar(String Id) {
+        public TModelClientes consultar(String Id) {
             var result = int.TryParse(Id, out int valId);
             if (result)
-                return Clientes_DAL.Consultar(valId);
+                return clientes_DAL.consultar(valId);
             else
                 return default;
         }
 
         // Valida los datos del cliente
-        public String Validar(TModelClientes prmCliente) {
+        public String validar(TModelClientes prmCliente) {
             String msj_valid = "";
 
             if (String.IsNullOrWhiteSpace(prmCliente.Identidad))
@@ -59,23 +59,23 @@ namespace COBRANZAS.CLIENTES
         }
 
         // Guarda los datos de un cliente
-        public bool Guardar(TModelClientes prmcliente, String prmUsuario)
+        public bool guardar(TModelClientes prmcliente, String prmUsuario)
         {
-            return this.Clientes_DAL.Guardar(prmcliente, prmUsuario);
+            return this.clientes_DAL.guardar(prmcliente, prmUsuario);
         }
 
         // Modifica los datos de un cliente
-        public bool Modificar(TModelClientes prmcliente, String prmUsuario)
+        public bool modificar(TModelClientes prmcliente, String prmUsuario)
         {
-            return this.Clientes_DAL.Modificar(prmcliente, prmUsuario);
+            return this.clientes_DAL.modificar(prmcliente, prmUsuario);
         }
 
         // Anula un cliente
-        public bool Anular(String prmIdCliente) {
+        public bool anular(String prmIdCliente) {
             bool res = false;
             if (int.TryParse(prmIdCliente, out int valId))
             {
-                res = this.Clientes_DAL.Anular(valId);
+                res = this.clientes_DAL.anular(valId);
             }
             else {
                 MessageBox.Show("El varlor del Id es invalido!", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -85,8 +85,8 @@ namespace COBRANZAS.CLIENTES
         }
 
         // Devuelve la lista de clientes
-        public List<TModelClientes> GetClientes() {
-            return this.Clientes_DAL.GetClientes();
+        public List<TModelClientes> getClientes() {
+            return this.clientes_DAL.getClientes();
         }
 
 

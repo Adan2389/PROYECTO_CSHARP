@@ -31,7 +31,7 @@ namespace COBRANZAS.CLIENTES
         private void CargarGrid()
         {
             dgvClientes.Rows.Clear();
-            List<TModelClientes> clientes = this.Clientes_BL.GetClientes();
+            List<TModelClientes> clientes = this.Clientes_BL.getClientes();
             foreach (var x in clientes)
             {
                 dgvClientes.Rows.Add(x.Id,
@@ -98,7 +98,7 @@ namespace COBRANZAS.CLIENTES
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
-            var cliente = Clientes_BL.Consultar(txtId.Text);
+            var cliente = Clientes_BL.consultar(txtId.Text);
             if (cliente != null)
             {
                 txtNombre.Text = cliente.Nombre;
@@ -131,16 +131,16 @@ namespace COBRANZAS.CLIENTES
             cliente.FechaNacimiento = dtpFechaNac.Value;
 
             bool res = false;
-            String msj_valid = this.Clientes_BL.Validar(cliente);
+            String msj_valid = this.Clientes_BL.validar(cliente);
             if (msj_valid == "")
             {
                 if (this.ACCION == 1)
-                    res = this.Clientes_BL.Guardar(cliente, this.USUARIO);
+                    res = this.Clientes_BL.guardar(cliente, this.USUARIO);
 
                 if (this.ACCION == 2)
                 {
                     cliente.Id = Convert.ToInt32(txtId.Text);
-                    res = this.Clientes_BL.Modificar(cliente, this.USUARIO);
+                    res = this.Clientes_BL.modificar(cliente, this.USUARIO);
                 }
                 if (res)
                 {
@@ -181,7 +181,7 @@ namespace COBRANZAS.CLIENTES
         {
             if (!(String.IsNullOrWhiteSpace(txtId.Text)))
             {
-                if (this.Clientes_BL.Anular(txtId.Text))
+                if (this.Clientes_BL.anular(txtId.Text))
                 {
                     MessageBox.Show("El clientes se ha anulado con exito!", "ACEPTAR", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Limpiar();
